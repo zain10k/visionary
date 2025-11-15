@@ -1,4 +1,4 @@
-import { Code, Package, Zap, Shield, Target, Award, Users, Globe } from 'lucide-react';
+import { Heart, Zap, Shield, Users, Globe, Settings, Briefcase, BarChart3, DollarSign, Repeat } from 'lucide-react';
 import { AnimatedCard } from '@/components/AnimatedCard';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { AnimatedText } from '@/components/AnimatedText';
@@ -6,71 +6,70 @@ import { AnimatedText } from '@/components/AnimatedText';
 export function About() {
   const values = [
     {
-      icon: Target,
-      title: 'Excellence',
-      description: 'We strive for excellence in everything we do, delivering exceptional results that exceed expectations.',
-    },
-    {
-      icon: Users,
-      title: 'Collaboration',
-      description: 'We believe in the power of collaboration, working closely with clients to achieve shared goals.',
-    },
-    {
-      icon: Zap,
-      title: 'Innovation',
-      description: 'We embrace innovation and technology to solve complex challenges and create new opportunities.',
+      icon: Heart,
+      title: 'Client-Centred Excellence',
+      description: 'We prioritise the needs, goals, and success of every client, delivering tailored solutions that make a measurable difference.',
     },
     {
       icon: Shield,
-      title: 'Integrity',
-      description: 'We operate with the highest standards of integrity, building trust through transparency and honesty.',
+      title: 'Integrity & Professionalism',
+      description: 'We uphold the highest standards of ethics, honesty, and accountability in every engagement.',
+    },
+    {
+      icon: Zap,
+      title: 'Innovation & Forward Thinking',
+      description: 'We embrace creativity, technology, and data-driven methodologies to solve complex challenges with modern, effective solutions.',
+    },
+    {
+      icon: Users,
+      title: 'Collaboration & Partnership',
+      description: 'We work closely with clients and stakeholders, fostering strong relationships built on trust, communication, and shared success.',
     },
     {
       icon: Globe,
-      title: 'Impact',
-      description: 'We\'re committed to making a positive impact on our clients, communities, and the world.',
-    },
-    {
-      icon: Award,
-      title: 'Quality',
-      description: 'We maintain the highest quality standards, ensuring every solution is robust, scalable, and reliable.',
+      title: 'Impact & Sustainability',
+      description: 'We aim to create value that lasts—strengthening organisations, communities, and the wider economy.',
     },
   ];
 
-  const stats = [
-    { value: '500+', label: 'Projects Delivered' },
-    { value: '200+', label: 'Happy Clients' },
-    { value: '50+', label: 'Team Members' },
-    { value: '10+', label: 'Years Experience' },
+  const whyChooseUs = [
+    {
+      icon: Settings,
+      title: 'Tailored, Practical Solutions',
+      description: 'We don\'t use generic templates. Every recommendation is customised to your goals and your industry.',
+    },
+    {
+      icon: Briefcase,
+      title: 'Expertise Across SMEs, Startups & Public Sector',
+      description: 'We understand the unique challenges faced by diverse organisations and adapt our approach accordingly.',
+    },
+    {
+      icon: BarChart3,
+      title: 'Data-Driven Decision Making',
+      description: 'Our insights, dashboards, and reports help you make smart, evidence-based business decisions.',
+    },
+    {
+      icon: DollarSign,
+      title: 'Affordable Consultancy Designed for Small Organisations',
+      description: 'We offer flexible packages and transparent pricing to ensure accessibility without compromising quality.',
+    },
+    {
+      icon: Repeat,
+      title: 'Long-Term Partnership, Not One-Off Advice',
+      description: 'We stay connected—supporting your growth, improvement, and success over the long term.',
+    },
   ];
 
-  const timeline = [
-    {
-      year: '2014',
-      title: 'Company Founded',
-      description: 'Visionary was founded with a mission to transform businesses through innovation.',
-    },
-    {
-      year: '2017',
-      title: 'Global Expansion',
-      description: 'Expanded operations to serve clients across multiple continents.',
-    },
-    {
-      year: '2020',
-      title: 'Digital Transformation',
-      description: 'Launched comprehensive digital transformation services.',
-    },
-    {
-      year: '2024',
-      title: 'AI Innovation',
-      description: 'Leading the way in AI and machine learning solutions.',
-    },
-  ];
+  // const stats = [
+  //   { value: '500+', label: 'Projects Delivered' },
+  //   { value: '200+', label: 'Happy Clients' },
+  //   { value: '10+', label: 'Years Experience' },
+  // ];
 
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+      <section className="section-padding">
         <div className="container-custom">
           <div className="max-w-3xl">
             <AnimatedText>
@@ -79,9 +78,20 @@ export function About() {
               </h1>
             </AnimatedText>
             <AnimatedText delay={0.2}>
-              <p className="text-xl text-gray-600 mb-8 text-balance">
-                We're a team of passionate professionals dedicated to helping
-                businesses navigate the digital landscape and achieve sustainable growth.
+              <p className="text-xl text-white mb-4 text-balance">
+                Visionary Management Consultants Ltd is a UK-based consulting firm dedicated to supporting SMEs, startups, and public sector organisations with strategic insight, operational improvement, and data-led decision-making. We help organisations overcome challenges, streamline operations, enhance financial health, and build long-term resilience.
+              </p>
+            </AnimatedText>
+            <AnimatedText delay={0.3}>
+              <p className="text-lg text-white mb-4 text-balance">
+                Our approach is rooted in practical experience, analytical expertise, and a commitment to delivering measurable results. Whether supporting early-stage businesses, growing SMEs, or public bodies seeking efficiency, we provide tailored consulting solutions that align with each client's unique goals and vision.
+              </p>
+            </AnimatedText>
+            <AnimatedText delay={0.4}>
+              <p className="text-lg text-white mb-8 text-balance">
+                <span className="text-white">
+                  At Visionary Management Consultants, we believe in building strong partnerships, driving continuous improvement, and empowering organisations to reach their full potential.
+                </span>
               </p>
             </AnimatedText>
           </div>
@@ -89,81 +99,76 @@ export function About() {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-primary-600 text-white">
+      {/* <section className="section-padding bg-primary-500/20 text-primary-400">
         <div className="container-custom">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <AnimatedSection key={stat.label} delay={index * 0.1}>
                 <div className="text-center">
                   <div className="text-5xl md:text-6xl font-bold mb-2">{stat.value}</div>
-                  <div className="text-primary-100">{stat.label}</div>
+                  <div className="text-primary-400">{stat.label}</div>
                 </div>
               </AnimatedSection>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Story Section */}
+      {/* Vision & Mission Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <AnimatedSection className="text-center mb-12">
-              <h2 className="mb-6 text-balance">
-                Our <span className="gradient-text">Story</span>
-              </h2>
-              <p className="text-lg text-gray-600 mb-8 text-balance">
-                Visionary was founded with a vision to transform how businesses
-                leverage technology to achieve their goals. Over the years, we've
-                grown into a trusted partner for organizations worldwide.
-              </p>
+          <AnimatedSection className="text-center mb-6">
+            <h2 className="mb-4 text-balance">
+              Our <span className="gradient-text">Vision & Mission</span>
+            </h2>
+          </AnimatedSection>
+          
+          <div className="max-w-4xl mx-auto space-y-9">
+            <AnimatedSection>
+              <div className="card p-8">
+                <h2 className="mb-2 text-2xl font-bold">
+                  <span className="gradient-text">Vision</span>
+                </h2>
+                <p className="text-lg text-white italic leading-relaxed">
+                  "To empower businesses with strategic guidance, data-driven insights, and innovative consulting solutions that enable them to operate at their best, achieve sustainable growth, and deliver meaningful impact within their communities."
+                </p>
+              </div>
             </AnimatedSection>
 
-            <div className="space-y-8">
-              {timeline.map((item, index) => (
-                <AnimatedCard key={item.year} delay={index * 0.15}>
-                  <div className="flex gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-20 h-20 rounded-xl bg-primary-100 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-primary-600">{item.year}</span>
-                      </div>
-                    </div>
-                    <div className="flex-grow">
-                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                      <p className="text-gray-600">{item.description}</p>
-                    </div>
-                  </div>
-                </AnimatedCard>
-              ))}
-            </div>
+            <AnimatedSection delay={0.2}>
+              <div className="card p-8">
+                <h2 className="mb-2 text-2xl font-bold">
+                  <span className="gradient-text">Mission</span>
+                </h2>
+                <p className="text-lg text-white italic leading-relaxed">
+                  "To deliver high-quality, results-driven consulting services that help SMEs, public sector organisations, and startups improve performance, strengthen operational capability, and achieve sustainable growth. We combine data-led insights, strategic thinking, and personalised support to solve real business challenges and create long-term value."
+                </p>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding">
         <div className="container-custom">
           <AnimatedSection className="text-center mb-16">
             <h2 className="mb-4 text-balance">
-              Our <span className="gradient-text">Values</span>
+              Core <span className="gradient-text">Values</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto text-balance">
-              The principles that guide everything we do and shape how we work
-              with our clients and each other.
-            </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
                 <AnimatedCard key={value.title} delay={index * 0.1}>
                   <div className="card text-center">
-                    <div className="w-14 h-14 rounded-xl bg-primary-100 flex items-center justify-center mx-auto mb-4">
-                      <Icon className="text-primary-600" size={28} />
+                    <div className="w-14 h-14 rounded-xl bg-primary-500/20 flex items-center justify-center mx-auto mb-4">
+                      <Icon className="text-primary-400" size={28} />
                     </div>
                     <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                    <p className="text-gray-600">{value.description}</p>
+                    <p className="text-white">{value.description}</p>
                   </div>
                 </AnimatedCard>
               );
@@ -172,52 +177,30 @@ export function About() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Why Choose Us Section */}
       <section className="section-padding">
         <div className="container-custom">
           <AnimatedSection className="text-center mb-12">
             <h2 className="mb-6 text-balance">
-              Why Choose <span className="gradient-text">Visionary</span>
+              Why Choose <span className="gradient-text">Visionary Management Consultants Ltd</span>?
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto text-balance">
-              We combine deep expertise with a passion for innovation to deliver
-              solutions that make a real difference.
-            </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <AnimatedCard delay={0.1}>
-              <div className="card text-center">
-                <Code className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Expert Team</h3>
-                <p className="text-gray-600">
-                  Our team brings years of experience across industries and
-                  technologies.
-                </p>
-              </div>
-            </AnimatedCard>
-
-            <AnimatedCard delay={0.2}>
-              <div className="card text-center">
-                <Package className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Proven Methods</h3>
-                <p className="text-gray-600">
-                  We use proven methodologies to ensure consistent, high-quality
-                  results.
-                </p>
-              </div>
-            </AnimatedCard>
-
-            <AnimatedCard delay={0.3}>
-              <div className="card text-center">
-                <Zap className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Innovation First</h3>
-                <p className="text-gray-600">
-                  We stay ahead of trends and leverage the latest technologies
-                  to solve challenges.
-                </p>
-              </div>
-            </AnimatedCard>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {whyChooseUs.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <AnimatedCard key={item.title} delay={index * 0.1}>
+                  <div className="card text-center h-full">
+                    <div className="w-14 h-14 rounded-xl bg-primary-500/20 flex items-center justify-center mx-auto mb-4">
+                      <Icon className="text-primary-400" size={28} />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                    <p className="text-white">{item.description}</p>
+                  </div>
+                </AnimatedCard>
+              );
+            })}
           </div>
         </div>
       </section>

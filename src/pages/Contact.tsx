@@ -76,7 +76,7 @@ export function Contact() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+      <section className="section-padding">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <AnimatedText>
@@ -85,9 +85,8 @@ export function Contact() {
               </h1>
             </AnimatedText>
             <AnimatedText delay={0.2}>
-              <p className="text-xl text-gray-600 mb-8 text-balance">
-                Ready to transform your business? Let's start a conversation about
-                how we can help you achieve your goals.
+              <p className="text-xl text-white mb-8 text-balance">
+                Ready to grow your organisation? Let's start a conversation about how our tailored consulting services can help you overcome challenges and achieve sustainable growth.
               </p>
             </AnimatedText>
           </div>
@@ -247,7 +246,7 @@ export function Contact() {
               <div className="space-y-6">
                 <div>
                   <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-                  <p className="text-gray-600 mb-8">
+                  <p className="text-white mb-8">
                     We'd love to hear from you. Reach out through any of these
                     channels, and we'll respond as soon as possible.
                   </p>
@@ -264,24 +263,24 @@ export function Contact() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="flex items-start gap-4 p-4 rounded-xl border border-gray-200 hover:border-primary-300 hover:bg-primary-50 transition-all group"
+                        className="flex items-start gap-4 p-4 rounded-xl border border-navy-700 hover:border-primary-500/50 hover:bg-primary-500/10 transition-all group"
                       >
-                        <div className="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center group-hover:bg-primary-600 transition-colors">
-                          <Icon className="text-primary-600 group-hover:text-white transition-colors" size={20} />
+                        <div className="w-12 h-12 rounded-lg bg-primary-500/20 flex items-center justify-center group-hover:bg-primary-500 transition-colors">
+                          <Icon className="text-primary-400 group-hover:text-navy-900 transition-colors" size={20} />
                         </div>
                         <div>
                           <h3 className="font-semibold mb-1">{info.title}</h3>
-                          <p className="text-gray-600">{info.content}</p>
+                          <p className="text-white">{info.content}</p>
                         </div>
                       </motion.a>
                     );
                   })}
                 </div>
 
-                <div className="mt-8 p-6 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl border border-primary-200">
+                <div className="mt-8 p-6 bg-gradient-to-br from-primary-500/20 to-primary-500/10 rounded-xl border border-primary-500/30">
                   <h3 className="font-bold mb-2">Business Hours</h3>
-                  <p className="text-gray-700 mb-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p className="text-gray-700">Saturday - Sunday: Closed</p>
+                  <p className="text-white mb-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                  <p className="text-white">Saturday - Sunday: Closed</p>
                 </div>
               </div>
             </AnimatedSection>

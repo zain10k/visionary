@@ -14,7 +14,9 @@
   }
 
   body {
-    @apply bg-white text-gray-900 antialiased;
+    background-color: #0a1929; /* navy-950 */
+    color: #ff9bb3; /* primary-400 */
+    @apply antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
@@ -52,38 +54,80 @@
   }
 
   .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700 
-           hover:shadow-lg hover:shadow-primary-500/50 
-           focus:ring-primary-500 active:scale-95;
+    @apply btn hover:shadow-lg active:scale-95 font-bold;
+    background-color: #ff6b9d; /* primary-500 */
+    color: #102a43; /* navy-900 */
+  }
+  
+  .btn-primary:hover {
+    background-color: #ff7ba3; /* primary-400 */
+    box-shadow: 0 10px 15px -3px rgb(255 107 157 / 0.5); /* primary-500/50 */
+  }
+  
+  .btn-primary:focus {
+    --tw-ring-color: #ff6b9d; /* primary-500 */
   }
 
   .btn-secondary {
-    @apply btn bg-white text-gray-900 border-2 border-gray-200 
-           hover:border-gray-300 hover:bg-gray-50 
-           focus:ring-gray-500 active:scale-95;
+    @apply btn bg-transparent border-2 active:scale-95;
+    color: #ff9bb3; /* primary-400 */
+    border-color: #ff6b9d; /* primary-500 */
+  }
+  
+  .btn-secondary:hover {
+    border-color: #ff7ba3; /* primary-400 */
+    background-color: rgb(255 107 157 / 0.1); /* primary-500/10 */
+  }
+  
+  .btn-secondary:focus {
+    --tw-ring-color: #ff6b9d; /* primary-500 */
   }
 
   .btn-ghost {
-    @apply btn bg-transparent text-gray-700 
-           hover:bg-gray-100 focus:ring-gray-500 active:scale-95;
+    @apply btn bg-transparent active:scale-95;
+    color: #ff9bb3; /* primary-400 */
+  }
+  
+  .btn-ghost:hover {
+    background-color: rgb(255 107 157 / 0.1); /* primary-500/10 */
+  }
+  
+  .btn-ghost:focus {
+    --tw-ring-color: #ff6b9d; /* primary-500 */
   }
 
   .input {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-xl 
-           focus:outline-none focus:ring-2 focus:ring-primary-500 
-           focus:border-transparent transition-all duration-200
-           placeholder:text-gray-400;
+    @apply w-full px-4 py-3 border rounded-xl 
+           focus:outline-none focus:ring-2 transition-all duration-200;
+    border-color: #334e68; /* navy-700 */
+    background-color: #102a43; /* navy-900 */
+    color: #ff9bb3; /* primary-300 */
+  }
+  
+  .input::placeholder {
+    color: #627d98; /* navy-500 */
+  }
+  
+  .input:focus {
+    --tw-ring-color: #ff6b9d; /* primary-500 */
+    border-color: #ff6b9d; /* primary-500 */
   }
 
   .card {
-    @apply bg-white rounded-2xl shadow-sm border border-gray-100 
-           p-6 md:p-8 transition-all duration-300 
-           hover:shadow-xl hover:shadow-primary-500/10;
+    @apply rounded-2xl shadow-sm p-6 md:p-8 transition-all duration-300;
+    background-color: transparent;
+    border-color: #334e68; /* navy-700 */
+    color: #ffffff; /* white */
+    border-width: 1px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 20px 25px -5px rgb(255 107 157 / 0.2); /* primary-500/20 */
   }
 
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(to right, #0284c7, #0ea5e9, #d946ef);
+    background-image: linear-gradient(to right, #ff9bb3, #ff7ba3, #ff6b9d);
   }
 
   .section-padding {

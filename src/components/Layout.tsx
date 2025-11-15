@@ -14,6 +14,14 @@ export function Layout({ children }: LayoutProps) {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+
   const navItems = [
     { path: '/', label: 'Home', icon: Home },
     { path: '/services', label: 'Services', icon: Briefcase },
@@ -22,19 +30,19 @@ export function Layout({ children }: LayoutProps) {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-navy-950">
       <ParticleBackground />
       
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-navy-950/90 backdrop-blur-md">
         <nav className="container-custom">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            <Link to="/" className="flex items-center space-x-2 group">
+            <Link to="/" onClick={scrollToTop} className="flex items-center space-x-2 group">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="text-2xl lg:text-3xl font-bold gradient-text">
-                  Visionary
+                  Visionary Management Consultants
                 </span>
               </motion.div>
             </Link>
@@ -47,10 +55,11 @@ export function Layout({ children }: LayoutProps) {
                   <li key={item.path}>
                     <Link
                       to={item.path}
+                      onClick={scrollToTop}
                       className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
                         isActive(item.path)
-                          ? 'bg-primary-50 text-primary-700 font-semibold'
-                          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                          ? 'bg-primary-500/20 text-primary-400 font-semibold'
+                          : 'text-primary-300 hover:bg-primary-500/10 hover:text-primary-400'
                       }`}
                     >
                       <Icon size={18} />
@@ -64,7 +73,7 @@ export function Layout({ children }: LayoutProps) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors"
+              className="md:hidden p-2 text-primary-400 hover:text-primary-300 transition-colors"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -79,7 +88,7 @@ export function Layout({ children }: LayoutProps) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white border-t border-gray-100"
+              className="md:hidden bg-navy-900 border-t border-navy-800"
             >
               <ul className="container-custom py-4 space-y-2">
                 {navItems.map((item, index) => {
@@ -93,11 +102,14 @@ export function Layout({ children }: LayoutProps) {
                     >
                       <Link
                         to={item.path}
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          scrollToTop();
+                        }}
                         className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                           isActive(item.path)
-                            ? 'bg-primary-50 text-primary-700 font-semibold'
-                            : 'text-gray-600 hover:bg-gray-50'
+                            ? 'bg-primary-500/20 text-primary-400 font-semibold'
+                            : 'text-primary-300 hover:bg-primary-500/10'
                         }`}
                       >
                         <Icon size={20} />
@@ -112,7 +124,7 @@ export function Layout({ children }: LayoutProps) {
         </AnimatePresence>
       </header>
 
-      <main className="flex-1 pt-16 lg:pt-20">
+      <main className="flex-1 pt-16 lg:pt-20 relative z-10">
         <motion.div
           key={location.pathname}
           initial={{ opacity: 0 }}
@@ -124,30 +136,30 @@ export function Layout({ children }: LayoutProps) {
         </motion.div>
       </main>
 
-      <footer className="bg-gray-50 border-t border-gray-200 mt-auto">
+      <footer className="bg-transparent border-t border-navy-800 mt-auto">
         <div className="container-custom py-12">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="text-lg font-bold mb-4 gradient-text">Visionary</h3>
-              <p className="text-gray-600 text-sm">
-                Transforming businesses through innovation and technology.
+              <h3 className="text-lg font-bold mb-4 gradient-text">Visionary Management Consultants Ltd</h3>
+              <p className="text-white text-sm">
+                UK-based consulting firm supporting SMEs, startups, and public sector organisations with strategic insight, operational improvement, and data-led decision-making.
               </p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <ul className="space-y-2 text-sm text-white">
                 <li>
-                  <Link to="/about" className="hover:text-primary-600 transition-colors">
+                  <Link to="/about" onClick={scrollToTop} className="hover:text-primary-400 transition-colors">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to="/services" className="hover:text-primary-600 transition-colors">
+                  <Link to="/services" onClick={scrollToTop} className="hover:text-primary-600 transition-colors">
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="hover:text-primary-600 transition-colors">
+                  <Link to="/contact" onClick={scrollToTop} className="hover:text-primary-600 transition-colors">
                     Contact
                   </Link>
                 </li>
@@ -155,23 +167,26 @@ export function Layout({ children }: LayoutProps) {
             </div>
             <div>
               <h4 className="font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li>Strategy & Consulting</li>
-                <li>Technology Solutions</li>
-                <li>Digital Transformation</li>
+              <ul className="space-y-2 text-sm text-white">
+                <li>People / HR</li>
+                <li>Digital Tech</li>
+                <li>Operations & Strategy</li>
+                <li>Supply Chain</li>
+                <li>Marketing</li>
+                <li>Project Management</li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <ul className="space-y-2 text-sm text-white">
                 <li>LinkedIn</li>
                 <li>Twitter</li>
                 <li>Email</li>
               </ul>
             </div>
           </div>
-          <div className="pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
-            <p>&copy; 2024 Visionary. All rights reserved.</p>
+          <div className="pt-8 border-t border-navy-700 text-center text-sm text-primary-400">
+            <p> 2025 Visionary Management Consultants Ltd. All rights reserved.</p>
           </div>
         </div>
       </footer>
