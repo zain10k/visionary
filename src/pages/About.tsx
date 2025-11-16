@@ -117,7 +117,7 @@ export function About() {
         <div className="container-custom">
           <AnimatedSection className="text-center mb-6">
             <h2 className="mb-4 text-balance">
-              Our <span className="gradient-text">Vision & Mission</span>
+               <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Our Vision & Mission</span>
             </h2>
           </AnimatedSection>
           
@@ -125,7 +125,7 @@ export function About() {
             <AnimatedSection>
               <div className="card p-8">
                 <h2 className="mb-2 text-2xl font-bold">
-                  <span className="gradient-text">Vision</span>
+                  <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Vision</span>
                 </h2>
                 <p className="text-lg text-white italic leading-relaxed">
                   "Empower organisations with strategy and insight to achieve sustainable growth."
@@ -136,7 +136,7 @@ export function About() {
             <AnimatedSection delay={0.2}>
               <div className="card p-8">
                 <h2 className="mb-2 text-2xl font-bold">
-                  <span className="gradient-text">Mission</span>
+                  <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Mission</span>
                 </h2>
                 <p className="text-lg text-white italic leading-relaxed">
                   "Deliver results-driven consulting that improves performance and builds capability."

@@ -142,18 +142,18 @@ export function Services() {
         <div className="container-custom">
           <AnimatedSection className="text-center mb-16">
             <h2 className="mb-4 text-balance">
-              Our <span className="gradient-text">Approach</span>
+              <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 120%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Our Approach</span>
             </h2>
             <p className="text-lg text-white max-w-2xl mx-auto text-balance">
               Practical, analytical, and focused on measurable results.
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-primary-200">
             {process.map((item, index) => (
               <AnimatedCard key={item.step} delay={index * 0.15}>
                 <div className="text-center">
-                  <div className="text-5xl font-bold text-primary-400 mb-4">
+                  <div className="text-5xl font-bold text-primary-200 mb-4">
                     {item.step}
                   </div>
                   <h3 className="text-xl font-bold mb-3">{item.title}</h3>

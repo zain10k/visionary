@@ -68,25 +68,27 @@ export function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-16 md:pt-16 md:pb-24">
         <div className="container-custom text-center">
-        <AnimatedText delay={0.3}>
-          <p className="text-xl md:text-3xl font-medium mb-8 bold">
+        <AnimatedText delay={0.2}>
+          <h1 className="text-balance mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.14]">
             <span
-              className="animated-gradient-text"
+              className="animated-gradient-text align-text-bottom"
               style={{
                 background:
-                  "linear-gradient(270deg, #3b82f6 0%, #8b5cf6 30%, #ec4899 70%, #f59e42 100%)",
+                   "linear-gradient(270deg,rgb(255, 178, 196) 0%,rgb(255, 141, 175) 40%,rgb(254, 120, 165) 100%)",
                 backgroundSize: "600% 600%",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 animation: "animatedGradientBluePink 6s ease-in-out infinite",
                 display: "inline-block",
+                lineHeight: "1.14",
+                paddingBottom: "0.14em", // Give some room at the bottom
               }}
             >
               Turning Vision into Reality
             </span>
-          </p>
+          </h1>
           <style>
-            {`
+          {`
             @keyframes animatedGradientBluePink {
               0% { background-position: 0% 50%; }
               50% { background-position: 100% 50%; }
@@ -103,28 +105,26 @@ export function Home() {
             </div>
           </AnimatedText> */}
 
-          <AnimatedText delay={0.2}>
-            <h1 className="text-balance mb-4">
-              Empowering{' '}
-              <span className="gradient-text">Organisations</span> Through
-              <br /> Strategic Consulting & Data-Driven Insights
-            </h1>
-          </AnimatedText>
-
-          
-          {/* <AnimatedText delay={0.4}>
-            <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto mb-10 text-balance">
-              Strategic consulting and data-led insight to help your organisation grow with clarity.
+          <AnimatedText delay={0.35}>
+            <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-10 text-balance">
+              Empowering organisations through strategic consulting and data-driven insights.
             </p>
-          </AnimatedText> */}
+          </AnimatedText>
 
           <AnimatedText delay={0.6}>
             <div className="flex flex-wrap sm:flex-row gap-7 justify-center mt-8">
-              <Link to="/services" className="btn-primary inline-flex items-center gap-2">
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 bg-primary-200 text-navy-950 font-semibold rounded-lg px-6 py-3 transition-colors hover:bg-primary-400"
+              >
                 Explore Services
                 <ArrowRight size={20} />
               </Link>
-              <Link to="/contact" className="btn-secondary inline-flex items-center gap-2">
+              <Link
+                to="/contact"
+                className="btn-secondary inline-flex items-center gap-2 text-primary-200 border-2 border-primary-200 hover:bg-primary-200/10 transition-colors"
+                style={{ borderColor: 'var(--color-primary-200, #ffc9cd)' }}
+              >
                 Get in Touch
                 <ArrowRight size={20} />
               </Link>
@@ -171,7 +171,7 @@ export function Home() {
         <div className="container-custom">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-balance mb-4">
-              Our <span className="gradient-text">Capabilities</span>
+              <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 120%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Our Capabilities</span>
             </h2>
             {/* <p className="text-lg text-white max-w-xl mx-auto text-balance">
               Cross-sector expertise, tailored to your context.
@@ -198,35 +198,18 @@ export function Home() {
         <div className="container-custom text-center">
           <AnimatedSection>
             <h2 className="text-4xl md:text-5xl mb-6 text-balance font-bold">
-              <span className="text-pink-400">Ready to Grow Your Organisation?</span>
+              <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Ready to Grow Your Organisation?</span>
             </h2>
             <p className="text-xl mb-8 text-white max-w-xl mx-auto text-balance">
               Let’s explore how we can move you forward.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-xl font-semibold text-lg
-                         bg-gradient-to-r from-primary-400 via-primary-500 to-pink-400
-                         text-white shadow-xl hover:scale-105 focus:ring-4 focus:ring-primary-300 transition-all duration-200 btn
-                         animate-gradient"
-              style={{
-                backgroundSize: "200% 200%",
-                backgroundPosition: "0% 50%",
-                animation: "gradientMove 3s ease-in-out infinite"
-              }}
+              className="inline-flex items-center gap-2 bg-primary-200 text-navy-950 font-semibold rounded-lg px-6 py-3 transition-colors hover:bg-primary-400"
             >
               Start a Conversation
-              <ArrowRight size={22} className="ml-1 transition-transform duration-200 group-hover:translate-x-1 text-white" />
+              <ArrowRight size={20} />
             </Link>
-            <style>
-              {`
-                @keyframes gradientMove {
-                  0% { background-position: 0% 50%; }
-                  50% { background-position: 100% 50%; }
-                  100% { background-position: 0% 50%; }
-                }
-              `}
-            </style>
           </AnimatedSection>
         </div>
       </section>

@@ -100,7 +100,7 @@ export function Contact() {
             {/* Contact Form */}
             <AnimatedSection>
               <div className="card">
-                <h2 className="text-2xl font-bold mb-6">Send us a message</h2>
+                <h2 className="text-2xl font-bold mb-6 text-primary-200">Send us a message</h2>
 
                 {submitted && (
                   <motion.div
@@ -226,7 +226,7 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary w-full inline-flex items-center justify-center gap-2"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-primary-200 text-navy-950 font-semibold rounded-lg px-6 py-3 hover:bg-primary-300 transition-colors"
                   >
                     {isSubmitting ? (
                       <>Sending...</>

@@ -57,8 +57,8 @@ export function Layout({ children }: LayoutProps) {
                       onClick={scrollToTop}
                       className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
                         isActive(item.path)
-                          ? 'bg-primary-500/20 text-primary-400 font-semibold'
-                          : 'text-primary-300 hover:bg-primary-500/10 hover:text-primary-400'
+                          ? 'bg-primary-500/20 text-[#ffc9cd] font-semibold'
+                          : 'text-[#ffc9cd] hover:bg-primary-500/10 hover:text-white'
                       }`}
                     >
                       <Icon size={18} />
@@ -107,8 +107,8 @@ export function Layout({ children }: LayoutProps) {
                         }}
                         className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                           isActive(item.path)
-                            ? 'bg-primary-500/20 text-primary-400 font-semibold'
-                            : 'text-primary-300 hover:bg-primary-500/10'
+                            ? 'bg-primary-500/20 text-[#ffc9cd] font-semibold'
+                            : 'text-[#ffc9cd] hover:bg-primary-500/10 hover:text-white'
                         }`}
                       >
                         <Icon size={20} />
@@ -150,27 +150,39 @@ export function Layout({ children }: LayoutProps) {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
+              <h4 className="font-semibold mb-4 text-primary-200">Company</h4>
               <ul className="space-y-2 text-sm text-white">
                 <li>
-                  <Link to="/about" onClick={scrollToTop} className="hover:text-primary-400 transition-colors">
+                  <Link
+                    to="/about"
+                    onClick={scrollToTop}
+                    className="hover:text-primary-200 transition-colors underline underline-offset-4 decoration-white hover:decoration-white"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to="/services" onClick={scrollToTop} className="hover:text-primary-600 transition-colors">
+                  <Link
+                    to="/services"
+                    onClick={scrollToTop}
+                    className="hover:text-primary-200 transition-colors underline underline-offset-4 decoration-white hover:decoration-white"
+                  >
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" onClick={scrollToTop} className="hover:text-primary-600 transition-colors">
+                  <Link
+                    to="/contact"
+                    onClick={scrollToTop}
+                    className="hover:text-primary-200 transition-colors underline underline-offset-4 decoration-white hover:decoration-white"
+                  >
                     Contact
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Services</h4>
+              <h4 className="font-semibold mb-4 text-primary-200">Services</h4>
               <ul className="space-y-2 text-sm text-white">
                 <li>People / HR</li>
                 <li>Digital Tech</li>
@@ -181,7 +193,7 @@ export function Layout({ children }: LayoutProps) {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
+              <h4 className="font-semibold mb-4 text-primary-200">Connect</h4>
               <ul className="space-y-2 text-sm text-white">
                 <li>LinkedIn</li>
                 <li>Twitter</li>
@@ -189,7 +201,7 @@ export function Layout({ children }: LayoutProps) {
               </ul>
             </div>
           </div>
-          <div className="pt-8 border-t border-navy-700 text-center text-sm text-primary-400">
+          <div className="pt-8 border-t border-navy-700 text-center text-sm text-primary-200">
             <p> 2025 Visionary Management Consultants Ltd. All rights reserved.</p>
           </div>
         </div>
