@@ -9,7 +9,7 @@ export function Services() {
       icon: Users,
       title: 'People / HR',
       description:
-        'Build stronger teams and develop your human resources capability. We help SMEs, startups, and public sector organisations create effective HR strategies, policies, and practices that support growth and performance.',
+        'Build stronger teams with practical HR strategies and support.',
       features: ['HR Strategy Development', 'Recruitment & Talent Management', 'Performance Management', 'Employee Engagement'],
       color: 'from-blue-500 to-cyan-500',
     },
@@ -17,7 +17,7 @@ export function Services() {
       icon: Code,
       title: 'Digital Tech',
       description:
-        'Leverage digital technology to transform your operations and enhance customer experience. We help organisations adopt and integrate digital solutions that drive efficiency and growth.',
+        'Adopt digital solutions that improve efficiency and experience.',
       features: ['Digital Strategy', 'Technology Implementation', 'Digital Transformation', 'System Integration'],
       color: 'from-purple-500 to-pink-500',
     },
@@ -25,7 +25,7 @@ export function Services() {
       icon: Briefcase,
       title: 'Operations - Business Strategy & Planning',
       description:
-        'Streamline your operations with tailored business strategy and planning. We help SMEs, startups, and public sector organisations develop practical strategies, optimize processes, and improve operational capability.',
+        'Streamline operations with clear strategy, planning, and process design.',
       features: ['Business Strategy Development', 'Operational Planning', 'Process Optimization', 'Performance Improvement'],
       color: 'from-orange-500 to-red-500',
     },
@@ -33,7 +33,7 @@ export function Services() {
       icon: Package,
       title: 'Supply Chain',
       description:
-        'Optimize your supply chain to reduce costs, improve efficiency, and build resilience. We provide practical consulting to help organisations manage suppliers, logistics, and inventory effectively.',
+        'Reduce cost and build resilience across your supply chain.',
       features: ['Supply Chain Strategy', 'Supplier Management', 'Logistics Optimization', 'Inventory Management'],
       color: 'from-indigo-500 to-purple-500',
     },
@@ -41,7 +41,7 @@ export function Services() {
       icon: Megaphone,
       title: 'Marketing',
       description:
-        'Develop effective marketing strategies to reach your target audience and grow your business. We help SMEs, startups, and public sector organisations create marketing plans that deliver measurable results.',
+        'Sharper marketing to reach the right audience and grow.',
       features: ['Marketing Strategy', 'Brand Development', 'Digital Marketing', 'Market Research'],
       color: 'from-green-500 to-emerald-500',
     },
@@ -49,7 +49,7 @@ export function Services() {
       icon: ClipboardList,
       title: 'Project Management',
       description:
-        'Deliver projects successfully with expert project management support. We help organisations plan, execute, and manage projects effectively, ensuring they are completed on time and within budget.',
+        'Deliver projects on time with structured, hands-on support.',
       features: ['Project Planning', 'Project Execution', 'Risk Management', 'Stakeholder Management'],
       color: 'from-teal-500 to-cyan-500',
     },
@@ -91,7 +91,14 @@ export function Services() {
             </AnimatedText>
             <AnimatedText delay={0.2}>
               <p className="text-xl text-white mb-8 text-balance">
-                Tailored consulting services for SMEs, startups, and public sector organisations. We combine strategic thinking, data-led insights, and personalised support to solve real business challenges and create long-term value.
+              Tailored services combining strategy and data to solve real challenges.
+              </p>
+            </AnimatedText>
+            <AnimatedText delay={0.35}>
+              <p className="text-white/90 text-base md:text-lg text-balance">
+                From quick audits to end-to-end delivery, we meet you where you are. 
+                Start small with a focused engagement or scale into a broader programme as momentum builds. 
+                Clear timelines, measurable outcomes, zero fluff.
               </p>
             </AnimatedText>
           </div>
@@ -138,7 +145,7 @@ export function Services() {
               Our <span className="gradient-text">Approach</span>
             </h2>
             <p className="text-lg text-white max-w-2xl mx-auto text-balance">
-              Our approach is rooted in practical experience, analytical expertise, and a commitment to delivering measurable results that align with your unique goals.
+              Practical, analytical, and focused on measurable results.
             </p>
           </AnimatedSection>
 

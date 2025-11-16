@@ -10,28 +10,28 @@ export function Home() {
       icon: Target,
       title: 'Strategic Insight',
       description:
-        'Expert guidance tailored for SMEs, startups, and public sector organisations to navigate challenges and achieve sustainable growth.',
+        'Tailored guidance to navigate challenges and drive sustainable growth.',
       color: 'from-blue-500 to-cyan-500',
     },
     {
       icon: TrendingUp,
       title: 'Operational Improvement',
       description:
-        'Streamline your operations and enhance efficiency with practical, data-driven solutions designed for your unique needs.',
+        'Streamline operations with practical, data-driven improvements.',
       color: 'from-purple-500 to-pink-500',
     },
     {
       icon: BarChart3,
       title: 'Data-Led Decision Making',
       description:
-        'Transform your data into actionable insights with dashboards and reports that help you make smart, evidence-based decisions.',
+        'Turn data into clear, actionable insights.',
       color: 'from-orange-500 to-red-500',
     },
     {
       icon: Users,
       title: 'Long-Term Partnership',
       description:
-        'We stay connected—supporting your growth, improvement, and success over the long term, not just one-off advice.',
+        'Support that continues beyond the first engagement.',
       color: 'from-green-500 to-emerald-500',
     },
   ];
@@ -112,14 +112,14 @@ export function Home() {
           </AnimatedText>
 
           
-          <AnimatedText delay={0.4}>
-            <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-10 text-balance">
-              Visionary Management Consultants Ltd supports SMEs, startups, and public sector organisations with strategic insight, operational improvement, and data-led decision-making to help you achieve sustainable growth.
+          {/* <AnimatedText delay={0.4}>
+            <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto mb-10 text-balance">
+              Strategic consulting and data-led insight to help your organisation grow with clarity.
             </p>
-          </AnimatedText>
+          </AnimatedText> */}
 
           <AnimatedText delay={0.6}>
-            <div className="flex flex-col sm:flex-row gap-5 justify-center">
+            <div className="flex flex-wrap sm:flex-row gap-7 justify-center mt-8">
               <Link to="/services" className="btn-primary inline-flex items-center gap-2">
                 Explore Services
                 <ArrowRight size={20} />
@@ -140,9 +140,9 @@ export function Home() {
             <h2 className="text-balance mb-4">
               What We <span className="gradient-text">Do</span>
             </h2>
-            <p className="text-lg text-white max-w-2xl mx-auto text-balance">
-              Tailored consulting solutions designed specifically for SMEs, startups, and public sector organisations to help you overcome challenges and achieve your goals.
-            </p>
+            {/* <p className="text-lg text-white max-w-xl mx-auto text-balance">
+              Practical consulting across strategy, operations, people, and data.
+            </p> */}
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -173,9 +173,9 @@ export function Home() {
             <h2 className="text-balance mb-4">
               Our <span className="gradient-text">Capabilities</span>
             </h2>
-            <p className="text-lg text-white max-w-2xl mx-auto text-balance">
-              Practical consulting expertise across diverse sectors, with solutions customised to your industry, size, and specific challenges.
-            </p>
+            {/* <p className="text-lg text-white max-w-xl mx-auto text-balance">
+              Cross-sector expertise, tailored to your context.
+            </p> */}
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -200,8 +200,8 @@ export function Home() {
             <h2 className="text-4xl md:text-5xl mb-6 text-balance font-bold">
               <span className="text-pink-400">Ready to Grow Your Organisation?</span>
             </h2>
-            <p className="text-xl mb-8 text-white max-w-2xl mx-auto text-balance">
-              Let's discuss how our tailored consulting services can help you overcome challenges, improve performance, and achieve sustainable growth.
+            <p className="text-xl mb-8 text-white max-w-xl mx-auto text-balance">
+              Let’s explore how we can move you forward.
             </p>
             <Link
               to="/contact"

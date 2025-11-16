@@ -8,27 +8,27 @@ export function About() {
     {
       icon: Heart,
       title: 'Client-Centred Excellence',
-      description: 'We prioritise the needs, goals, and success of every client, delivering tailored solutions that make a measurable difference.',
+      description: 'Client needs first, always. Impact over jargon.',
     },
     {
       icon: Shield,
       title: 'Integrity & Professionalism',
-      description: 'We uphold the highest standards of ethics, honesty, and accountability in every engagement.',
+      description: 'Ethical, honest, and accountable in every engagement.',
     },
     {
       icon: Zap,
       title: 'Innovation & Forward Thinking',
-      description: 'We embrace creativity, technology, and data-driven methodologies to solve complex challenges with modern, effective solutions.',
+      description: 'Creative, data-led solutions for modern challenges.',
     },
     {
       icon: Users,
       title: 'Collaboration & Partnership',
-      description: 'We work closely with clients and stakeholders, fostering strong relationships built on trust, communication, and shared success.',
+      description: 'Partnerships built on trust and clear communication.',
     },
     {
       icon: Globe,
       title: 'Impact & Sustainability',
-      description: 'We aim to create value that lasts—strengthening organisations, communities, and the wider economy.',
+      description: 'Value that lasts—for organisations and communities.',
     },
   ];
 
@@ -36,27 +36,27 @@ export function About() {
     {
       icon: Settings,
       title: 'Tailored, Practical Solutions',
-      description: 'We don\'t use generic templates. Every recommendation is customised to your goals and your industry.',
+      description: 'No templates. Everything is built for your goals.',
     },
     {
       icon: Briefcase,
       title: 'Expertise Across SMEs, Startups & Public Sector',
-      description: 'We understand the unique challenges faced by diverse organisations and adapt our approach accordingly.',
+      description: 'Experience across SMEs, startups, and the public sector.',
     },
     {
       icon: BarChart3,
       title: 'Data-Driven Decision Making',
-      description: 'Our insights, dashboards, and reports help you make smart, evidence-based business decisions.',
+      description: 'Clear insights that inform smart decisions.',
     },
     {
       icon: DollarSign,
       title: 'Affordable Consultancy Designed for Small Organisations',
-      description: 'We offer flexible packages and transparent pricing to ensure accessibility without compromising quality.',
+      description: 'Flexible, transparent pricing for smaller organisations.',
     },
     {
       icon: Repeat,
       title: 'Long-Term Partnership, Not One-Off Advice',
-      description: 'We stay connected—supporting your growth, improvement, and success over the long term.',
+      description: 'A partner for the long term, not a one-off.',
     },
   ];
 
@@ -79,19 +79,17 @@ export function About() {
             </AnimatedText>
             <AnimatedText delay={0.2}>
               <p className="text-xl text-white mb-4 text-balance">
-                Visionary Management Consultants Ltd is a UK-based consulting firm dedicated to supporting SMEs, startups, and public sector organisations with strategic insight, operational improvement, and data-led decision-making. We help organisations overcome challenges, streamline operations, enhance financial health, and build long-term resilience.
+              We’re a UK-based consultancy helping organisations grow through strategy, operations, and data.
               </p>
             </AnimatedText>
             <AnimatedText delay={0.3}>
               <p className="text-lg text-white mb-4 text-balance">
-                Our approach is rooted in practical experience, analytical expertise, and a commitment to delivering measurable results. Whether supporting early-stage businesses, growing SMEs, or public bodies seeking efficiency, we provide tailored consulting solutions that align with each client's unique goals and vision.
+              Practical, analytical, and outcome-focused—tailored to your goals.
               </p>
             </AnimatedText>
             <AnimatedText delay={0.4}>
               <p className="text-lg text-white mb-8 text-balance">
-                <span className="text-white">
-                  At Visionary Management Consultants, we believe in building strong partnerships, driving continuous improvement, and empowering organisations to reach their full potential.
-                </span>
+              <span className="text-white">Partnership over transactions. Progress over promises.</span>
               </p>
             </AnimatedText>
           </div>
@@ -130,7 +128,7 @@ export function About() {
                   <span className="gradient-text">Vision</span>
                 </h2>
                 <p className="text-lg text-white italic leading-relaxed">
-                  "To empower businesses with strategic guidance, data-driven insights, and innovative consulting solutions that enable them to operate at their best, achieve sustainable growth, and deliver meaningful impact within their communities."
+                  "Empower organisations with strategy and insight to achieve sustainable growth."
                 </p>
               </div>
             </AnimatedSection>
@@ -141,7 +139,7 @@ export function About() {
                   <span className="gradient-text">Mission</span>
                 </h2>
                 <p className="text-lg text-white italic leading-relaxed">
-                  "To deliver high-quality, results-driven consulting services that help SMEs, public sector organisations, and startups improve performance, strengthen operational capability, and achieve sustainable growth. We combine data-led insights, strategic thinking, and personalised support to solve real business challenges and create long-term value."
+                  "Deliver results-driven consulting that improves performance and builds capability."
                 </p>
               </div>
             </AnimatedSection>
@@ -182,7 +180,7 @@ export function About() {
         <div className="container-custom">
           <AnimatedSection className="text-center mb-12">
             <h2 className="mb-6 text-balance">
-              Why Choose <span className="gradient-text">Visionary Management Consultants Ltd</span>?
+              Why Choose <span className="gradient-text">Visionary</span>?
             </h2>
           </AnimatedSection>
 

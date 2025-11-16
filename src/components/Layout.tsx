@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, Info, Briefcase, Mail } from 'lucide-react';
 import { ParticleBackground } from './ParticleBackground';
+import { Logo } from './Logo';
 
 interface LayoutProps {
   children: ReactNode;
@@ -36,12 +37,10 @@ export function Layout({ children }: LayoutProps) {
       <header className="fixed top-0 left-0 right-0 z-50 bg-navy-950/90 backdrop-blur-md">
         <nav className="container-custom">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            <Link to="/" onClick={scrollToTop} className="flex items-center space-x-2 group">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="text-2xl lg:text-3xl font-bold gradient-text">
+            <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 group">
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="flex items-center gap-3">
+                <Logo variant="dark" className="h-18 lg:h-20 w-auto group-hover:scale-105 transition-transform" />
+                <span className="hidden sm:block text-lg lg:text-xl font-semibold tracking-wide text-primary-200 group-hover:text-primary-400 transition-colors">
                   Visionary Management Consultants
                 </span>
               </motion.div>
@@ -140,7 +139,12 @@ export function Layout({ children }: LayoutProps) {
         <div className="container-custom py-12">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="text-lg font-bold mb-4 gradient-text">Visionary Management Consultants Ltd</h3>
+              <div className="mb-4 flex items-center gap-3">
+                <Logo variant="dark" className="h-12 lg:h-14 w-auto" />
+                <span className="text-base lg:text-lg font-semibold text-primary-200">
+                  Visionary Management Consultants
+                </span>
+              </div>
               <p className="text-white text-sm">
                 UK-based consulting firm supporting SMEs, startups, and public sector organisations with strategic insight, operational improvement, and data-led decision-making.
               </p>
