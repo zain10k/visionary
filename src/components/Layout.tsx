@@ -145,11 +145,11 @@ export function Layout({ children }: LayoutProps) {
                   Visionary Management Consultants
                 </span>
               </div>
-              <p className="text-white text-sm">
+              <p className="text-white text-sm text-justify">
                 UK-based consulting firm supporting SMEs, startups, and public sector organisations with strategic insight, operational improvement, and data-led decision-making.
               </p>
             </div>
-            <div>
+            <div className="text-center">
               <h4 className="font-semibold mb-4 text-primary-200">Company</h4>
               <ul className="space-y-2 text-sm text-white">
                 <li>
@@ -181,7 +181,7 @@ export function Layout({ children }: LayoutProps) {
                 </li>
               </ul>
             </div>
-            <div>
+            <div className="text-center">
               <h4 className="font-semibold mb-4 text-primary-200">Services</h4>
               <ul className="space-y-2 text-sm text-white">
                 <li>People / HR</li>
@@ -192,12 +192,19 @@ export function Layout({ children }: LayoutProps) {
                 <li>Project Management</li>
               </ul>
             </div>
-            <div>
+            <div className="text-center">
               <h4 className="font-semibold mb-4 text-primary-200">Connect</h4>
               <ul className="space-y-2 text-sm text-white">
-                <li>LinkedIn</li>
-                <li>Twitter</li>
-                <li>Email</li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/visionary-management-consultants-ltd/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-primary-200 transition-colors underline underline-offset-4 decoration-white hover:decoration-white"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

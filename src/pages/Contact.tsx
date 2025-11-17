@@ -56,20 +56,18 @@ export function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      content: 'hello@visionary.com',
-      link: 'mailto:hello@visionary.com',
+      content: 'info@visionaryconsultancy.uk',
     },
     {
       icon: Phone,
       title: 'Phone',
-      content: '+44 (0) 20 1234 5678',
-      link: 'tel:+442012345678',
+      content: '+44 (0) 20 8150 1689',
     },
     {
       icon: MapPin,
       title: 'Office',
-      content: '123 Business Street, London, UK',
-      link: '#',
+      content: 'Unit 9, 4 Creek Road, Barking, England, IG11 0JH',
+      link: 'https://maps.google.com/?q=Unit+9,+4+Creek+Road,+Barking,+England,+IG11+0JH',
     },
   ];
 
@@ -85,7 +83,7 @@ export function Contact() {
               </h1>
             </AnimatedText>
             <AnimatedText delay={0.2}>
-              <p className="text-xl text-white mb-8 text-balance">
+              <p className="text-lg text-white mb-8 text-balance">
                 Ready to grow your organisation? Let's start a conversation about how our tailored consulting services can help you overcome challenges and achieve sustainable growth.
               </p>
             </AnimatedText>

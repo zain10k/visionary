@@ -106,7 +106,7 @@ export function Home() {
           </AnimatedText> */}
 
           <AnimatedText delay={0.35}>
-            <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-10 text-balance">
+            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-10 text-balance">
               Empowering organisations through strategic consulting and data-driven insights.
             </p>
           </AnimatedText>
@@ -200,7 +200,7 @@ export function Home() {
             <h2 className="text-4xl md:text-5xl mb-6 text-balance font-bold">
               <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Ready to Grow Your Organisation?</span>
             </h2>
-            <p className="text-xl mb-8 text-white max-w-xl mx-auto text-balance">
+            <p className="text-lg mb-8 text-white max-w-xl mx-auto text-balance">
               Let’s explore how we can move you forward.
             </p>
             <Link

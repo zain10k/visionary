@@ -71,27 +71,23 @@ export function About() {
       {/* Hero Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="max-w-3xl">
+          <div className="max-w-2xl mx-auto text-center">
             <AnimatedText>
               <h1 className="mb-6 text-balance">
                 About <span className="gradient-text">Visionary</span>
               </h1>
             </AnimatedText>
             <AnimatedText delay={0.2}>
-              <p className="text-xl text-white mb-4 text-balance">
-              We’re a UK-based consultancy helping organisations grow through strategy, operations, and data.
-              </p>
-            </AnimatedText>
-            <AnimatedText delay={0.3}>
               <p className="text-lg text-white mb-4 text-balance">
-              Practical, analytical, and outcome-focused—tailored to your goals.
+                We’re a UK-based consultancy helping organisations grow through strategy, operations, and data.  Practical, analytical, and outcome-focused—tailored to your goals. Partnership over transactions. Progress over promises.
+
               </p>
             </AnimatedText>
-            <AnimatedText delay={0.4}>
-              <p className="text-lg text-white mb-8 text-balance">
-              <span className="text-white">Partnership over transactions. Progress over promises.</span>
+            {/* <AnimatedText delay={0.3}>
+              <p className="text-lg text-white mb-4 text-center">
+                Practical, analytical, and outcome-focused—tailored to your goals. Partnership over transactions. Progress over promises.
               </p>
-            </AnimatedText>
+            </AnimatedText> */}
           </div>
         </div>
       </section>
@@ -127,7 +123,7 @@ export function About() {
                 <h2 className="mb-2 text-2xl font-bold">
                   <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Vision</span>
                 </h2>
-                <p className="text-lg text-white italic leading-relaxed">
+                <p className="text-base text-white italic leading-relaxed">
                   "Empower organisations with strategy and insight to achieve sustainable growth."
                 </p>
               </div>
@@ -138,7 +134,7 @@ export function About() {
                 <h2 className="mb-2 text-2xl font-bold">
                   <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Mission</span>
                 </h2>
-                <p className="text-lg text-white italic leading-relaxed">
+                <p className="text-base text-white italic leading-relaxed">
                   "Deliver results-driven consulting that improves performance and builds capability."
                 </p>
               </div>
@@ -180,7 +176,7 @@ export function About() {
         <div className="container-custom">
           <AnimatedSection className="text-center mb-12">
             <h2 className="mb-6 text-balance">
-              Why Choose <span className="gradient-text">Visionary</span>?
+              Why Choose <span className="gradient-text">Visionary</span><span className="text-primary-400">?</span>
             </h2>
           </AnimatedSection>
 

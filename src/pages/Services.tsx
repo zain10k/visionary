@@ -83,22 +83,20 @@ export function Services() {
       {/* Hero Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="max-w-3xl">
+          <div className="max-w-2xl mx-auto">
             <AnimatedText>
-              <h1 className="mb-6 text-balance">
+              <h1 className="mb-6 text-balance text-center">
                 Our <span className="gradient-text">Services</span>
               </h1>
             </AnimatedText>
             <AnimatedText delay={0.2}>
-              <p className="text-xl text-white mb-8 text-balance">
-              Tailored services combining strategy and data to solve real challenges.
+              <p className="text-lg text-white mb-6 text-balance text-center">
+                Tailored services combining strategy and data to solve real challenges.
               </p>
             </AnimatedText>
             <AnimatedText delay={0.35}>
-              <p className="text-white/90 text-base md:text-lg text-balance">
-                From quick audits to end-to-end delivery, we meet you where you are. 
-                Start small with a focused engagement or scale into a broader programme as momentum builds. 
-                Clear timelines, measurable outcomes, zero fluff.
+              <p className="text-white/90 text-sm md:text-base text-balance text-center">
+                From quick audits to end-to-end delivery, we meet you where you are. Start small with a focused engagement or scale into a broader programme as momentum builds. Clear timelines, measurable outcomes, zero fluff.
               </p>
             </AnimatedText>
           </div>
@@ -144,7 +142,7 @@ export function Services() {
             <h2 className="mb-4 text-balance">
               <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 120%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Our Approach</span>
             </h2>
-            <p className="text-lg text-white max-w-2xl mx-auto text-balance">
+            <p className="text-base text-white max-w-2xl mx-auto text-balance">
               Practical, analytical, and focused on measurable results.
             </p>
           </AnimatedSection>
