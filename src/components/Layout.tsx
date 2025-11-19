@@ -1,7 +1,7 @@
 import { ReactNode, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Home, Info, Briefcase, Mail } from 'lucide-react';
+import { Menu, X, Home, Info, Briefcase, Mail, Users } from 'lucide-react';
 import { ParticleBackground } from './ParticleBackground';
 import { Logo } from './Logo';
 
@@ -27,6 +27,7 @@ export function Layout({ children }: LayoutProps) {
     { path: '/', label: 'Home', icon: Home },
     { path: '/services', label: 'Services', icon: Briefcase },
     { path: '/about', label: 'About', icon: Info },
+    { path: '/careers', label: 'Careers', icon: Users },
     { path: '/contact', label: 'Contact', icon: Mail },
   ];
 
@@ -168,6 +169,15 @@ export function Layout({ children }: LayoutProps) {
                     className="hover:text-primary-200 transition-colors underline underline-offset-4 decoration-white hover:decoration-white"
                   >
                     Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/careers"
+                    onClick={scrollToTop}
+                    className="hover:text-primary-200 transition-colors underline underline-offset-4 decoration-white hover:decoration-white"
+                  >
+                    Careers
                   </Link>
                 </li>
                 <li>
