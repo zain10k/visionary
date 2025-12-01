@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { AnimatedText } from '@/components/AnimatedText';
 import { sendContactEmail } from '@/lib/emailService';
@@ -34,11 +34,9 @@ export function Contact() {
   const onSubmit = async (data: ContactFormData) => {
     try {
       setError(null);
-      // Send email via EmailJS
       await sendContactEmail(data);
       setSubmitted(true);
       reset();
-      // Hide success message after 5 seconds
       setTimeout(() => setSubmitted(false), 5000);
     } catch (err) {
       console.error('Contact form error:', err);
@@ -47,7 +45,6 @@ export function Contact() {
           ? err.message
           : 'Failed to send message. Please try again later.'
       );
-      // Hide error message after 5 seconds
       setTimeout(() => setError(null), 5000);
     }
   };
@@ -55,237 +52,187 @@ export function Contact() {
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email',
+      title: 'Email Us',
       content: 'info@visionaryconsultancy.uk',
+      link: 'mailto:info@visionaryconsultancy.uk'
     },
     {
       icon: Phone,
-      title: 'Phone',
+      title: 'Call Us',
       content: '+44 (0) 20 8150 1689',
+      link: 'tel:+442081501689'
     },
     {
       icon: MapPin,
-      title: 'Office',
+      title: 'Visit Us',
       content: 'Unit 9, 4 Creek Road, Barking, England, IG11 0JH',
       link: 'https://maps.google.com/?q=Unit+9,+4+Creek+Road,+Barking,+England,+IG11+0JH',
     },
   ];
 
   return (
-    <div className="relative">
-      {/* Hero Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <AnimatedText>
-              <h1 className="mb-6 text-balance">
-                Get in <span className="gradient-text">Touch</span>
-              </h1>
-            </AnimatedText>
-            <AnimatedText delay={0.2}>
-              <p className="text-lg text-white mb-8 text-balance">
-                Ready to grow your organisation? Let's start a conversation about how our tailored consulting services can help you overcome challenges and achieve sustainable growth.
-              </p>
-            </AnimatedText>
-          </div>
-        </div>
+    <div className="relative min-h-screen">
+      {/* Hero Section - Simple Text */}
+      <section className="pt-32 pb-16 text-center container-custom">
+        <AnimatedText>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            Let's Start a <span className="gradient-text">Conversation</span>
+          </h1>
+        </AnimatedText>
+        <AnimatedText delay={0.1}>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            Ready to transform your business? Our team is ready to help you navigate your toughest challenges.
+          </p>
+        </AnimatedText>
       </section>
 
-      {/* Contact Section */}
-      <section className="section-padding">
+      {/* Split Form Section */}
+      <section className="pb-24">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <AnimatedSection>
-              <div className="card">
-                <h2 className="text-2xl font-bold mb-6 text-primary-200">Send us a message</h2>
-
-                {submitted && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center gap-3"
-                  >
-                    <CheckCircle2 className="text-green-600" size={20} />
-                    <span className="text-green-700">
-                      Thank you! We'll get back to you soon.
-                    </span>
-                  </motion.div>
-                )}
-
-                {error && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center gap-3"
-                  >
-                    <AlertCircle className="text-red-600" size={20} />
-                    <span className="text-red-700">{error}</span>
-                  </motion.div>
-                )}
-
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-semibold mb-2">
-                        Name *
-                      </label>
-                      <input
-                        id="name"
-                        type="text"
-                        {...register('name')}
-                        className="input"
-                        placeholder="John Doe"
-                      />
-                      {errors.name && (
-                        <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-semibold mb-2">
-                        Email *
-                      </label>
-                      <input
-                        id="email"
-                        type="email"
-                        {...register('email')}
-                        className="input"
-                        placeholder="john@company.com"
-                      />
-                      {errors.email && (
-                        <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-semibold mb-2">
-                        Company
-                      </label>
-                      <input
-                        id="company"
-                        type="text"
-                        {...register('company')}
-                        className="input"
-                        placeholder="Company Name"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold mb-2">
-                        Phone
-                      </label>
-                      <input
-                        id="phone"
-                        type="tel"
-                        {...register('phone')}
-                        className="input"
-                        placeholder="+44 20 1234 5678"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-semibold mb-2">
-                      Subject *
-                    </label>
-                    <input
-                      id="subject"
-                      type="text"
-                      {...register('subject')}
-                      className="input"
-                      placeholder="How can we help?"
-                    />
-                    {errors.subject && (
-                      <p className="mt-1 text-sm text-red-600">{errors.subject.message}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-semibold mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      {...register('message')}
-                      rows={6}
-                      className="input resize-none"
-                      placeholder="Tell us about your project..."
-                    />
-                    {errors.message && (
-                      <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
-                    )}
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-primary-200 text-navy-950 font-semibold rounded-lg px-6 py-3 hover:bg-primary-300 transition-colors"
-                  >
-                    {isSubmitting ? (
-                      <>Sending...</>
-                    ) : (
-                      <>
-                        Send Message
-                        <Send size={20} />
-                      </>
-                    )}
-                  </button>
-                </form>
-              </div>
-            </AnimatedSection>
-
-            {/* Contact Info */}
-            <AnimatedSection delay={0.2}>
-              <div className="space-y-6">
-                <div>
-                  <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-                  <p className="text-white mb-8">
-                    We'd love to hear from you. Reach out through any of these
-                    channels, and we'll respond as soon as possible.
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  {contactInfo.map((info, index) => {
+          <div className="bg-navy-900 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl grid lg:grid-cols-5">
+            
+            {/* Left Side: Info */}
+            <div className="lg:col-span-2 bg-gradient-to-b from-primary-400/20 to-navy-950 p-10 lg:p-12 flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10" />
+              
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold text-white mb-8">Contact Information</h3>
+                <div className="space-y-8">
+                  {contactInfo.map((info) => {
                     const Icon = info.icon;
                     return (
-                      <motion.a
-                        key={info.title}
-                        href={info.link}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
-                        className="flex items-start gap-4 p-4 rounded-xl border border-navy-700 hover:border-primary-500/50 hover:bg-primary-500/10 transition-all group"
-                      >
-                        <div className="w-12 h-12 rounded-lg bg-primary-500/20 flex items-center justify-center group-hover:bg-primary-500 transition-colors">
-                          <Icon className="text-primary-400 group-hover:text-navy-900 transition-colors" size={20} />
+                      <div key={info.title} className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-full bg-primary-400/20 flex items-center justify-center flex-shrink-0 text-primary-400">
+                          <Icon size={20} />
                         </div>
                         <div>
-                          <h3 className="font-semibold mb-1">{info.title}</h3>
-                          <p className="text-white">{info.content}</p>
+                          <p className="text-slate-400 text-sm font-medium mb-1">{info.title}</p>
+                          {info.link ? (
+                            <a href={info.link} className="text-white font-semibold hover:text-primary-400 transition-colors">
+                              {info.content}
+                            </a>
+                          ) : (
+                             <p className="text-white font-semibold">{info.content}</p>
+                          )}
                         </div>
-                      </motion.a>
+                      </div>
                     );
                   })}
                 </div>
-
-                <div className="mt-8 p-6 bg-gradient-to-br from-primary-500/20 to-primary-500/10 rounded-xl border border-primary-500/30">
-                  <h3 className="font-bold mb-2">Business Hours</h3>
-                  <p className="text-white mb-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p className="text-white">Saturday - Sunday: Closed</p>
-                </div>
               </div>
-            </AnimatedSection>
+
+              <div className="relative z-10 mt-12">
+                 <div className="p-6 bg-navy-950/50 rounded-xl border border-white/5 backdrop-blur-sm">
+                   <h4 className="text-white font-bold mb-2">Business Hours</h4>
+                   <p className="text-slate-400 text-sm">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                 </div>
+              </div>
+            </div>
+
+            {/* Right Side: Form */}
+            <div className="lg:col-span-3 p-10 lg:p-12 bg-navy-900">
+               <div className="mb-8">
+                 <h3 className="text-2xl font-bold text-white mb-2">Send us a message</h3>
+                 <p className="text-slate-400">Fill out the form below and we'll get back to you within 24 hours.</p>
+               </div>
+
+               {submitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="bg-green-500/10 border border-green-500/20 p-8 rounded-2xl text-center py-16"
+                  >
+                    <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 text-green-500">
+                      <CheckCircle2 size={32} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+                    <p className="text-slate-300">Thank you for reaching out. We'll be in touch shortly.</p>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-slate-300">Name</label>
+                        <input
+                          {...register('name')}
+                          className="w-full bg-navy-950 border border-slate-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-400 focus:border-transparent outline-none transition-all"
+                          placeholder="John Doe"
+                        />
+                        {errors.name && <p className="text-red-400 text-xs">{errors.name.message}</p>}
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-slate-300">Email</label>
+                        <input
+                          {...register('email')}
+                          className="w-full bg-navy-950 border border-slate-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-400 focus:border-transparent outline-none transition-all"
+                          placeholder="john@company.com"
+                        />
+                        {errors.email && <p className="text-red-400 text-xs">{errors.email.message}</p>}
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-slate-300">Company (Optional)</label>
+                        <input
+                          {...register('company')}
+                          className="w-full bg-navy-950 border border-slate-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-400 focus:border-transparent outline-none transition-all"
+                          placeholder="Company Ltd"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                         <label className="text-sm font-medium text-slate-300">Phone (Optional)</label>
+                         <input
+                          {...register('phone')}
+                          className="w-full bg-navy-950 border border-slate-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-400 focus:border-transparent outline-none transition-all"
+                          placeholder="+44..."
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-slate-300">Subject</label>
+                      <input
+                        {...register('subject')}
+                        className="w-full bg-navy-950 border border-slate-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-400 focus:border-transparent outline-none transition-all"
+                        placeholder="How can we help?"
+                      />
+                      {errors.subject && <p className="text-red-400 text-xs">{errors.subject.message}</p>}
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium text-slate-300">Message</label>
+                      <textarea
+                        {...register('message')}
+                        rows={5}
+                        className="w-full bg-navy-950 border border-slate-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-400 focus:border-transparent outline-none transition-all resize-none"
+                        placeholder="Tell us about your project..."
+                      />
+                      {errors.message && <p className="text-red-400 text-xs">{errors.message.message}</p>}
+                    </div>
+
+                    {error && (
+                      <div className="flex items-center gap-2 text-red-400 bg-red-500/10 p-3 rounded-lg">
+                        <AlertCircle size={16} />
+                        <span className="text-sm">{error}</span>
+                      </div>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-primary-400 text-navy-950 font-bold rounded-lg py-4 hover:bg-white transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? 'Sending...' : (
+                        <>Send Message <Send size={18} /></>
+                      )}
+                    </button>
+                  </form>
+                )}
+            </div>
           </div>
         </div>
       </section>
     </div>
   );
 }
-

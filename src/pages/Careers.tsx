@@ -1,217 +1,169 @@
 import { Link } from 'react-router-dom';
-import { Briefcase, MapPin, Users, TrendingUp, Lightbulb, BarChart3, Target, Mail, ArrowRight } from 'lucide-react';
+import { Briefcase, MapPin, Users, TrendingUp, Lightbulb, BarChart3, Target, Mail, ArrowRight, Check } from 'lucide-react';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { AnimatedText } from '@/components/AnimatedText';
 import { AnimatedCard } from '@/components/AnimatedCard';
 
 export function Careers() {
-  const keyResponsibilities = [
-    'Develop and implement marketing strategies, campaigns, and content for clients and the company',
-    'Plan, set up, and manage client advertising campaigns (Google Ads, Meta Ads, and other paid channels)',
-    'Conduct market research, competitor analysis, and audience profiling for clients',
-    'Manage client social media accounts, email campaigns, and promotional content',
-    'Support clients with website updates, SEO improvements, and overall digital presence',
-    'Monitor and analyze campaign performance, providing actionable insights and recommendations',
-    'Present campaign reports and strategy updates to clients',
-    'Communicate directly with clients to understand goals, provide guidance, and ensure satisfaction',
-    "Support internal marketing initiatives for Visionary's own brand and campaigns",
-  ];
-
-  const requirements = [
-    "Master's degree in a relevant field",
-    'Experience in advertising, digital marketing, or marketing support',
-    'Strong understanding of paid ads, social media, SEO, and content marketing',
-    'Excellent written and verbal communication skills',
-    'Organized, proactive, and able to manage multiple projects',
-    'Analytical mindset with the ability to interpret data and provide insights',
-    'Confident client-facing experience',
-    'Creative thinker with initiative',
-  ];
-
   const benefits = [
     {
       icon: Briefcase,
-      title: 'Variety & Impact',
-      description: 'Work on both internal and client campaigns for variety and impact',
+      title: 'Meaningful Work',
+      description: 'Work on high-impact projects that shape the future of industries.',
     },
     {
       icon: TrendingUp,
-      title: 'Career Growth',
-      description: 'Be part of a growing consultancy with opportunities for career growth',
-    },
-    {
-      icon: Target,
-      title: 'Strategic Role',
-      description: 'Play a key role in strategy development and creative direction',
+      title: 'Accelerated Growth',
+      description: 'Fast-track your career with mentorship and challenging assignments.',
     },
     {
       icon: Users,
-      title: 'Flexible Working',
-      description: 'Flexible working options',
-    },
-    {
-      icon: Lightbulb,
-      title: 'Professional Development',
-      description: 'Training and professional development',
-    },
-    {
-      icon: BarChart3,
-      title: 'Collaborative Team',
-      description: 'Collaborative, supportive team environment',
+      title: 'Collaborative Culture',
+      description: 'Join a diverse team that values unique perspectives and teamwork.',
     },
   ];
 
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <AnimatedText>
-              <h1 className="mb-6 text-balance">
-                Join the Visionary<span className="gradient-text"> Team</span> 
-              </h1>
-            </AnimatedText>
-            <AnimatedText delay={0.2}>
-              <p className="text-lg text-white mb-8 text-balance">
-                We're looking for talented individuals who are passionate about making a difference. Join us in helping organisations achieve sustainable growth through strategic insight and innovative solutions.
-              </p>
-            </AnimatedText>
-          </div>
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+           <img 
+            src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+            alt="Team" 
+            className="w-full h-full object-cover"
+           />
+           <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/40 to-navy-950" />
+        </div>
+        
+        <div className="container-custom relative z-10 text-center">
+          <AnimatedText>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+              Join <span className="gradient-text">Visionary</span>
+            </h1>
+          </AnimatedText>
+          <AnimatedText delay={0.2}>
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-10">
+              We are looking for exceptional talent to help us solve the world's toughest business challenges. Build your legacy with us.
+            </p>
+          </AnimatedText>
+          <AnimatedText delay={0.4}>
+            <a 
+              href="#openings" 
+              className="inline-flex items-center gap-2 bg-primary-400 text-navy-950 font-bold rounded-full px-8 py-4 hover:bg-white transition-colors"
+            >
+              View Open Positions
+              <ArrowRight size={20} />
+            </a>
+          </AnimatedText>
         </div>
       </section>
 
-      {/* Job Posting Section */}
+      {/* Culture Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
+           <div className="grid md:grid-cols-3 gap-8 mb-16">
+             {benefits.map((benefit, index) => {
+               const Icon = benefit.icon;
+               return (
+                 <AnimatedCard key={benefit.title} delay={index * 0.1}>
+                   <div className="bg-navy-900 p-8 rounded-2xl border border-slate-800 text-center h-full">
+                     <div className="w-14 h-14 rounded-full bg-navy-950 flex items-center justify-center mx-auto mb-6 border border-slate-700">
+                       <Icon className="text-primary-400" size={24} />
+                     </div>
+                     <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
+                     <p className="text-slate-400">{benefit.description}</p>
+                   </div>
+                 </AnimatedCard>
+               );
+             })}
+           </div>
+        </div>
+      </section>
+
+      {/* Job Posting */}
+      <section id="openings" className="section-padding">
+        <div className="container-custom">
+          <AnimatedSection className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Current Opportunities</h2>
+            <p className="text-slate-400 text-lg">Find your place in our growing team.</p>
+          </AnimatedSection>
+
+          <div className="max-w-4xl">
             <AnimatedSection>
-              <div className="card p-8 lg:p-10">
-                {/* Job Title & Location */}
-                <div className="mb-8 pb-8 border-b border-navy-700">
-                  <h2 className="text-3xl font-bold mb-4">
-                    <span className="gradient-text">Advertising and Marketing Associate</span>
-                  </h2>
-                  <div className="flex flex-wrap items-center gap-4 text-white">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="text-primary-400" size={20} />
-                      <span>London, UK</span>
+              <div className="bg-navy-900/50 backdrop-blur-md border border-slate-700 rounded-2xl p-8 hover:border-primary-500/50 transition-colors duration-300">
+                <div className="flex flex-col md:flex-row justify-between md:items-center gap-6 mb-8 border-b border-slate-700 pb-8">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Advertising & Marketing Associate</h3>
+                    <div className="flex items-center gap-4 text-slate-400 text-sm font-medium">
+                      <span className="flex items-center gap-1"><MapPin size={16} className="text-primary-200" /> London, UK</span>
+                      <span className="flex items-center gap-1"><Briefcase size={16} className="text-primary-200" /> Full-time</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Briefcase className="text-primary-400" size={20} />
-                      <span>Full-time, On-site</span>
+                  </div>
+                  <Link 
+                    to="/contact" 
+                    className="inline-flex items-center justify-center gap-2 bg-primary-200 text-navy-950 font-bold rounded-lg px-6 py-3 hover:bg-white transition-colors"
+                  >
+                    Apply Now
+                  </Link>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div>
+                    <h4 className="font-bold text-lg mb-4 flex items-center gap-2 text-white">
+                      <Target className="text-primary-200" size={20} /> Role Overview
+                    </h4>
+                    <p className="text-slate-300 leading-relaxed mb-6">
+                      We are seeking a strategic and hands-on Advertising & Marketing Associate to drive our campaigns. You will take the lead on client-facing projects while supporting Visionary's internal brand growth.
+                    </p>
+                    
+                    <h4 className="font-bold text-lg mb-4 text-white">Key Responsibilities</h4>
+                    <ul className="space-y-3 mb-6">
+                      {[
+                        'Develop marketing strategies & campaigns',
+                        'Manage paid advertising (Google/Meta)',
+                        'Conduct market research & analysis',
+                        'Oversee social media & content',
+                        'Analyze performance & report to clients'
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-3 text-slate-300 text-sm">
+                          <Check size={16} className="text-primary-200 mt-0.5 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-bold text-lg mb-4 text-white">Requirements</h4>
+                    <ul className="space-y-3 mb-6">
+                       {[
+                        "Master's degree in relevant field",
+                        'Experience in digital marketing/ads',
+                        'Strong analytical & creative skills',
+                        'Excellent communication skills',
+                        'Proactive & organized mindset'
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-3 text-slate-300 text-sm">
+                          <Check size={16} className="text-primary-200 mt-0.5 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="bg-primary-200/10 p-6 rounded-xl border border-primary-200/20">
+                      <h4 className="font-bold text-primary-200 mb-2">Why This Role?</h4>
+                      <p className="text-primary-100 text-sm mb-4">
+                        Ideally positioned for someone who wants to blend strategy with execution and see the direct impact of their work on client success.
+                      </p>
                     </div>
                   </div>
                 </div>
-
-                {/* About the Role */}
-                <AnimatedSection delay={0.1}>
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-bold mb-4 text-primary-200">About the Role</h3>
-                    <p className="text-white leading-relaxed mb-4">
-                      This is a full-time on-site role for an Advertising and Marketing Associate based in London. The Advertising and Marketing Associate will be responsible for developing and executing marketing campaigns, conducting market research, and collaborating with the sales team to enhance brand awareness and generate revenue.
-                    </p>
-                    <p className="text-white leading-relaxed">
-                      As an Advertising & Marketing Associate, you will support Visionary's internal marketing while taking the lead on client-facing marketing projects. This role is hands-on and strategic, perfect for someone who enjoys developing campaigns, building client relationships, and delivering measurable results.
-                    </p>
-                  </div>
-                </AnimatedSection>
-
-                {/* Key Responsibilities */}
-                <AnimatedSection delay={0.2}>
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-bold mb-4 text-primary-200">Key Responsibilities</h3>
-                    <ul className="space-y-3">
-                      {keyResponsibilities.map((responsibility, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <ArrowRight className="text-primary-400 mt-1 flex-shrink-0" size={18} />
-                          <span className="text-white">{responsibility}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </AnimatedSection>
-
-                {/* What We're Looking For */}
-                <AnimatedSection delay={0.3}>
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-bold mb-4 text-primary-200">What We're Looking For</h3>
-                    <ul className="space-y-3">
-                      {requirements.map((requirement, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <ArrowRight className="text-primary-400 mt-1 flex-shrink-0" size={18} />
-                          <span className="text-white">{requirement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </AnimatedSection>
               </div>
             </AnimatedSection>
           </div>
         </div>
       </section>
-
-      {/* Why Join Visionary Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <AnimatedSection className="text-center mb-12">
-            <h2 className="mb-4 text-balance">
-              Why Join <span className="gradient-text">Visionary</span>?
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <AnimatedCard key={benefit.title} delay={index * 0.1}>
-                  <div className="card text-center h-full">
-                    <div className="w-14 h-14 rounded-xl bg-primary-500/20 flex items-center justify-center mx-auto mb-4">
-                      <Icon className="text-primary-400" size={28} />
-                    </div>
-                    <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                    <p className="text-white">{benefit.description}</p>
-                  </div>
-                </AnimatedCard>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <AnimatedSection>
-            <div className="max-w-3xl mx-auto">
-              <div className="card p-8 lg:p-10 text-center bg-gradient-to-br from-primary-500/20 to-primary-500/10 border-primary-500/30">
-                <h3 className="text-2xl font-bold mb-4 text-primary-200">Ready to Apply?</h3>
-                <p className="text-white mb-6 leading-relaxed">
-                  If you're excited about this opportunity and believe you'd be a great fit for our team, we'd love to hear from you. Send us your application through our contact form or email us directly.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center justify-center gap-2 bg-primary-200 text-navy-950 font-semibold rounded-lg px-6 py-3 hover:bg-primary-300 transition-colors"
-                  >
-                    Apply Now
-                    <Mail size={20} />
-                  </Link>
-                  {/* <a
-                    href="mailto:info@visionaryconsultancy.uk?subject=Application: Advertising and Marketing Associate"
-                    className="inline-flex items-center justify-center gap-2 border-2 border-primary-400 text-primary-200 font-semibold rounded-lg px-6 py-3 hover:bg-primary-500/10 transition-colors"
-                  >
-                    Email Us
-                    <ArrowRight size={20} />
-                  </a> */}
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
     </div>
   );
 }
-

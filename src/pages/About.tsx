@@ -1,4 +1,4 @@
-import { Heart, Zap, Shield, Users, Globe, Settings, Briefcase, BarChart3, DollarSign, Repeat } from 'lucide-react';
+import { Heart, Zap, Shield, Users, Globe, Settings, Briefcase, BarChart3, DollarSign, Repeat, CheckCircle } from 'lucide-react';
 import { AnimatedCard } from '@/components/AnimatedCard';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { AnimatedText } from '@/components/AnimatedText';
@@ -7,162 +7,107 @@ export function About() {
   const values = [
     {
       icon: Heart,
-      title: 'Client-Centred Excellence',
-      description: 'Client needs first, always. Impact over jargon.',
+      title: 'Client-Centred',
+      description: 'We place your needs at the core of every strategy. No cookie-cutter solutions, just impact.',
     },
     {
       icon: Shield,
-      title: 'Integrity & Professionalism',
-      description: 'Ethical, honest, and accountable in every engagement.',
+      title: 'Integrity First',
+      description: 'We operate with absolute transparency and accountability in every engagement.',
     },
     {
       icon: Zap,
-      title: 'Innovation & Forward Thinking',
-      description: 'Creative, data-led solutions for modern challenges.',
+      title: 'Innovation',
+      description: 'We bring creative, data-led thinking to solve modern business challenges.',
     },
     {
       icon: Users,
-      title: 'Collaboration & Partnership',
-      description: 'Partnerships built on trust and clear communication.',
-    },
-    {
-      icon: Globe,
-      title: 'Impact & Sustainability',
-      description: 'Value that lasts—for organisations and communities.',
+      title: 'Partnership',
+      description: 'We build relationships based on trust, collaboration, and shared success.',
     },
   ];
-
-  const whyChooseUs = [
-    {
-      icon: Settings,
-      title: 'Tailored, Practical Solutions',
-      description: 'No templates. Everything is built for your goals.',
-    },
-    {
-      icon: Briefcase,
-      title: 'Expertise Across SMEs, Startups & Public Sector',
-      description: 'Experience across SMEs, startups, and the public sector.',
-    },
-    {
-      icon: BarChart3,
-      title: 'Data-Driven Decision Making',
-      description: 'Clear insights that inform smart decisions.',
-    },
-    {
-      icon: DollarSign,
-      title: 'Affordable Consultancy Designed for Small Organisations',
-      description: 'Flexible, transparent pricing for smaller organisations.',
-    },
-    {
-      icon: Repeat,
-      title: 'Long-Term Partnership, Not One-Off Advice',
-      description: 'A partner for the long term, not a one-off.',
-    },
-  ];
-
-  // const stats = [
-  //   { value: '500+', label: 'Projects Delivered' },
-  //   { value: '200+', label: 'Happy Clients' },
-  //   { value: '10+', label: 'Years Experience' },
-  // ];
 
   return (
     <div className="relative">
-      {/* Hero Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="max-w-2xl mx-auto text-center">
-            <AnimatedText>
-              <h1 className="mb-6 text-balance">
-                About <span className="gradient-text">Visionary</span>
-              </h1>
-            </AnimatedText>
-            <AnimatedText delay={0.2}>
-              <p className="text-lg text-white mb-4 text-balance">
-                We’re a UK-based consultancy helping organisations grow through strategy, operations, and data.  Practical, analytical, and outcome-focused—tailored to your goals. Partnership over transactions. Progress over promises.
-
-              </p>
-            </AnimatedText>
-            {/* <AnimatedText delay={0.3}>
-              <p className="text-lg text-white mb-4 text-center">
-                Practical, analytical, and outcome-focused—tailored to your goals. Partnership over transactions. Progress over promises.
-              </p>
-            </AnimatedText> */}
-          </div>
+      {/* Hero Section - Centered Full Width */}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+           <img 
+            src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+            alt="Our Team" 
+            className="w-full h-full object-cover"
+           />
+           <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/50 to-transparent" />
+        </div>
+        
+        <div className="container-custom relative z-10 text-center">
+          <AnimatedText>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
+              <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
+              <span className="text-sm font-medium text-white uppercase tracking-wide">Our Story</span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              Defining the Future of <span className="gradient-text">Consulting.</span>
+            </h1>
+          </AnimatedText>
+          <AnimatedText delay={0.2}>
+            <p className="text-xl text-slate-200 leading-relaxed mb-8 max-w-2xl mx-auto font-light">
+              Visionary was founded on a simple belief: that true growth comes from the intersection of strategic clarity and operational excellence. We are a team of problem solvers, data scientists, and strategists dedicated to your success.
+            </p>
+          </AnimatedText>
         </div>
       </section>
 
-      {/* Stats Section */}
-      {/* <section className="section-padding bg-primary-500/20 text-primary-400">
-        <div className="container-custom">
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {stats.map((stat, index) => (
-              <AnimatedSection key={stat.label} delay={index * 0.1}>
-                <div className="text-center">
-                  <div className="text-5xl md:text-6xl font-bold mb-2">{stat.value}</div>
-                  <div className="text-primary-400">{stat.label}</div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
+      {/* Mission Statement - Full Width Image Background */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.pexels.com/photos/245240/pexels-photo-245240.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+            alt="Office Architecture" 
+            className="w-full h-full object-cover opacity-0 fixed-background"
+          />
+          {/* Fully transparent to let stars show through */}
+          <div className="absolute inset-0" style={{ background: "transparent" }} />
         </div>
-      </section> */}
-
-      {/* Vision & Mission Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <AnimatedSection className="text-center mb-6">
-            <h2 className="mb-4 text-balance">
-               <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Our Vision & Mission</span>
-            </h2>
+        
+        <div className="container-custom relative z-10 text-center max-w-4xl mx-auto">
+          <AnimatedSection>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Our Mission</h2>
+            <p className="text-2xl md:text-3xl text-slate-200 leading-relaxed font-light">
+              "To empower organisations with strategic clarity and operational excellence, building <span className="text-primary-400 font-medium">sustainable, profitable businesses</span> for the future."
+            </p>
+            <div className="mt-12 flex flex-wrap justify-center gap-4">
+              {['Strategy', 'Innovation', 'Growth', 'Sustainability'].map((tag) => (
+                <span key={tag} className="px-4 py-2 rounded-full border border-slate-700 text-slate-300 text-sm uppercase tracking-wider">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </AnimatedSection>
-          
-          <div className="max-w-4xl mx-auto space-y-9">
-            <AnimatedSection>
-              <div className="card p-8">
-                <h2 className="mb-2 text-2xl font-bold">
-                  <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Vision</span>
-                </h2>
-                <p className="text-base text-white italic leading-relaxed">
-                  "Empower organisations with strategy and insight to achieve sustainable growth."
-                </p>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <div className="card p-8">
-                <h2 className="mb-2 text-2xl font-bold">
-                  <span className="gradient-text" style={{background: "linear-gradient(90deg, #ffc9cd 0%,  #ff7ba3 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text"}}>Mission</span>
-                </h2>
-                <p className="text-base text-white italic leading-relaxed">
-                  "Deliver results-driven consulting that improves performance and builds capability."
-                </p>
-              </div>
-            </AnimatedSection>
-          </div>
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Values Grid */}
       <section className="section-padding">
         <div className="container-custom">
-          <AnimatedSection className="text-center mb-16">
-            <h2 className="mb-4 text-balance">
-              Core <span className="gradient-text">Values</span>
-            </h2>
-          </AnimatedSection>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Core Values</h2>
+              <div className="h-1 w-20 bg-primary-400"></div>
+            </div>
+          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
                 <AnimatedCard key={value.title} delay={index * 0.1}>
-                  <div className="card text-center">
-                    <div className="w-14 h-14 rounded-xl bg-primary-500/20 flex items-center justify-center mx-auto mb-4">
-                      <Icon className="text-primary-400" size={28} />
+                  <div className="bg-navy-950/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-primary-400/50 transition-colors h-full group">
+                    <div className="w-12 h-12 rounded-lg bg-navy-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-slate-700">
+                      <Icon className="text-primary-400" size={24} />
                     </div>
-                    <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                    <p className="text-white">{value.description}</p>
+                    <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
+                    <p className="text-slate-400 leading-relaxed">{value.description}</p>
                   </div>
                 </AnimatedCard>
               );
@@ -171,30 +116,41 @@ export function About() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Why Choose Us - Split Feature List */}
       <section className="section-padding">
         <div className="container-custom">
-          <AnimatedSection className="text-center mb-12">
-            <h2 className="mb-6 text-balance">
-              Why Choose <span className="gradient-text">Visionary</span><span className="text-primary-400">?</span>
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {whyChooseUs.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <AnimatedCard key={item.title} delay={index * 0.1}>
-                  <div className="card text-center h-full">
-                    <div className="w-14 h-14 rounded-xl bg-primary-500/20 flex items-center justify-center mx-auto mb-4">
-                      <Icon className="text-primary-400" size={28} />
-                    </div>
-                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                    <p className="text-white">{item.description}</p>
-                  </div>
-                </AnimatedCard>
-              );
-            })}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+             <AnimatedSection className="order-2 lg:order-1">
+               <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Why Choose Visionary?</h2>
+               <div className="space-y-6">
+                 {[
+                   { title: 'Tailored Solutions', desc: 'No templates. We build strategies around your specific context.' },
+                   { title: 'Cross-Sector Expertise', desc: 'Insights from Retail, Finance, Tech, and the Public Sector.' },
+                   { title: 'Data-Driven Decisions', desc: 'We replace guesswork with rigorous analysis.' },
+                   { title: 'Measurable ROI', desc: 'Focused on delivering tangible value and profit improvement.' },
+                   { title: 'Long-Term Partnership', desc: 'We are partners in your journey, not just one-off advisors.' }
+                 ].map((item, i) => (
+                   <div key={i} className="flex items-start gap-4">
+                     <CheckCircle className="text-primary-400 mt-1 flex-shrink-0" size={20} />
+                     <div>
+                       <h4 className="text-lg font-bold text-white">{item.title}</h4>
+                       <p className="text-slate-400">{item.desc}</p>
+                     </div>
+                   </div>
+                 ))}
+               </div>
+             </AnimatedSection>
+             
+             <AnimatedSection delay={0.2} className="order-1 lg:order-2 relative">
+                <div className="relative rounded-2xl overflow-hidden aspect-square">
+                   <img 
+                    src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                    alt="Partnership" 
+                    className="w-full h-full object-cover" 
+                   />
+                   <div className="absolute inset-0 bg-primary-900/20 mix-blend-multiply" />
+                </div>
+             </AnimatedSection>
           </div>
         </div>
       </section>

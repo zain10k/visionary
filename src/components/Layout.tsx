@@ -1,7 +1,7 @@
 import { ReactNode, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Home, Info, Briefcase, Mail, Users } from 'lucide-react';
+import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { ParticleBackground } from './ParticleBackground';
 import { Logo } from './Logo';
 
@@ -12,8 +12,7 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const isActive = (path: string) => location.pathname === path;
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -23,57 +22,107 @@ export function Layout({ children }: LayoutProps) {
     });
   };
 
-  const navItems = [
-    { path: '/', label: 'Home', icon: Home },
-    { path: '/services', label: 'Services', icon: Briefcase },
-    { path: '/about', label: 'About', icon: Info },
-    { path: '/careers', label: 'Careers', icon: Users },
-    { path: '/contact', label: 'Contact', icon: Mail },
+  const navLinks = [
+    {
+      label: 'Capabilities',
+      path: '/capabilities',
+      dropdown: [
+        { label: 'Strategy', path: '/capabilities' },
+        { label: 'Digital', path: '/capabilities' },
+        { label: 'Analytics', path: '/capabilities' },
+        { label: 'Growth', path: '/capabilities' },
+        { label: 'Sustainability', path: '/capabilities' },
+      ]
+    },
+    {
+      label: 'Industries',
+      path: '/industries',
+      dropdown: [
+        { label: 'Consumer Products', path: '/industries' },
+        { label: 'Financial Services', path: '/industries' },
+        { label: 'Industrials', path: '/industries' },
+        { label: 'Healthcare', path: '/industries' },
+        { label: 'Technology', path: '/industries' },
+        { label: 'Energy', path: '/industries' },
+      ]
+    },
+    { label: 'Insights', path: '/insights' },
+    { label: 'Careers', path: '/careers' },
+    { label: 'About', path: '/about' },
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-navy-950">
+    <div className="min-h-screen flex flex-col bg-navy-950 font-sans text-slate-50 selection:bg-primary-500/30">
       <ParticleBackground />
       
-      <header className="fixed top-0 left-0 right-0 z-50 bg-navy-950/90 backdrop-blur-md">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-navy-950/80 backdrop-blur-lg border-b border-white/5 transition-all duration-300">
         <nav className="container-custom">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 group">
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="flex items-center gap-3">
-                <Logo variant="dark" className="h-18 lg:h-20 w-auto group-hover:scale-105 transition-transform" />
-                <span className="hidden sm:block text-lg lg:text-xl font-semibold tracking-wide text-primary-200 group-hover:text-primary-400 transition-colors">
-                  Visionary Management Consultants
-                </span>
-              </motion.div>
+          <div className="flex items-center justify-between h-24">
+            {/* Logo */}
+            <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 group z-50 relative">
+              <Logo variant="dark" className="h-20 w-auto group-hover:scale-105 transition-transform duration-300" />
+              <span className="hidden lg:block text-xl font-bold tracking-tight text-white group-hover:text-primary-400 transition-colors">
+                Visionary Management Consultants
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
-            <ul className="hidden md:flex items-center gap-1">
-              {navItems.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <li key={item.path}>
-                    <Link
-                      to={item.path}
-                      onClick={scrollToTop}
-                      className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
-                        isActive(item.path)
-                          ? 'bg-primary-500/20 text-[#ffc9cd] font-semibold'
-                          : 'text-[#ffc9cd] hover:bg-primary-500/10 hover:text-white'
-                      }`}
-                    >
-                      <Icon size={18} />
-                      <span>{item.label}</span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+            <div className="hidden lg:flex items-center gap-8">
+              {navLinks.map((item) => (
+                <div
+                  key={item.label}
+                  className="relative group"
+                  onMouseEnter={() => setActiveDropdown(item.label)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <Link
+                    to={item.path}
+                    onClick={scrollToTop}
+                    className={`flex items-center gap-1 py-2 text-sm font-medium transition-colors hover:text-primary-400 ${
+                      location.pathname === item.path ? 'text-primary-400' : 'text-slate-300'
+                    }`}
+                  >
+                    {item.label}
+                    {item.dropdown && <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />}
+                  </Link>
+
+                  {/* Dropdown Menu */}
+                  {item.dropdown && (
+                    <div className="absolute top-full left-0 pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left">
+                      <div className="bg-navy-900 border border-white/10 rounded-xl p-2 shadow-xl backdrop-blur-xl">
+                        {item.dropdown.map((subItem) => (
+                          <Link
+                            key={subItem.label}
+                            to={subItem.path}
+                            onClick={scrollToTop}
+                            className="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                          >
+                            {subItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+            <div className="hidden lg:block">
+              <Link
+                to="/contact"
+                onClick={scrollToTop}
+                className="inline-flex items-center gap-2 bg-primary-400 text-navy-950 text-sm font-bold px-5 py-2.5 rounded-full hover:bg-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,201,205,0.3)]"
+              >
+                Get Started
+                <ArrowRight size={16} />
+              </Link>
+            </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-primary-400 hover:text-primary-300 transition-colors"
+              className="lg:hidden p-2 text-white hover:text-primary-400 transition-colors relative z-50"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -81,145 +130,121 @@ export function Layout({ children }: LayoutProps) {
           </div>
         </nav>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Overlay */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-navy-900 border-t border-navy-800"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="fixed inset-0 z-40 bg-navy-950 pt-24 px-6 pb-10 overflow-y-auto lg:hidden"
             >
-              <ul className="container-custom py-4 space-y-2">
-                {navItems.map((item, index) => {
-                  const Icon = item.icon;
-                  return (
-                    <motion.li
-                      key={item.path}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
+              <div className="flex flex-col gap-6">
+                {navLinks.map((item) => (
+                  <div key={item.label}>
+                    <Link
+                      to={item.path}
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        scrollToTop();
+                      }}
+                      className="text-2xl font-bold text-white block mb-4"
                     >
-                      <Link
-                        to={item.path}
-                        onClick={() => {
-                          setMobileMenuOpen(false);
-                          scrollToTop();
-                        }}
-                        className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
-                          isActive(item.path)
-                            ? 'bg-primary-500/20 text-[#ffc9cd] font-semibold'
-                            : 'text-[#ffc9cd] hover:bg-primary-500/10 hover:text-white'
-                        }`}
-                      >
-                        <Icon size={20} />
-                        <span>{item.label}</span>
-                      </Link>
-                    </motion.li>
-                  );
-                })}
-              </ul>
+                      {item.label}
+                    </Link>
+                    {item.dropdown && (
+                      <div className="pl-4 flex flex-col gap-3 border-l border-white/10">
+                        {item.dropdown.map((subItem) => (
+                          <Link
+                            key={subItem.label}
+                            to={subItem.path}
+                            onClick={() => {
+                              setMobileMenuOpen(false);
+                              scrollToTop();
+                            }}
+                            className="text-lg text-slate-400 hover:text-primary-400"
+                          >
+                            {subItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+                <Link
+                  to="/contact"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    scrollToTop();
+                  }}
+                  className="mt-4 w-full bg-primary-400 text-navy-950 text-center font-bold py-4 rounded-xl"
+                >
+                  Get Started
+                </Link>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
       </header>
 
-      <main className="flex-1 pt-16 lg:pt-20 relative z-10">
+      <main className="flex-1 relative z-10">
         <motion.div
           key={location.pathname}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.4 }}
         >
           {children}
         </motion.div>
       </main>
 
-      <footer className="bg-transparent border-t border-navy-800 mt-auto">
-        <div className="container-custom py-12">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="mb-4 flex items-center gap-3">
-                <Logo variant="dark" className="h-12 lg:h-14 w-auto" />
-                <span className="text-base lg:text-lg font-semibold text-primary-200">
-                  Visionary Management Consultants
-                </span>
-              </div>
-              <p className="text-white text-sm text-justify">
-                UK-based consulting firm supporting SMEs, startups, and public sector organisations with strategic insight, operational improvement, and data-led decision-making.
+      <footer className="border-t border-white/5 mt-auto pt-16 pb-8">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
+            <div className="col-span-1 md:col-span-2 max-w-md">
+              <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 mb-6">
+                <Logo variant="dark" className="h-14 w-auto" />
+                <span className="text-xl font-bold text-primary-400">Visionary Management Consultants</span>
+              </Link>
+              <p className="text-slate-400 leading-relaxed mb-8">
+                Global consultancy delivering strategic clarity and operational excellence for the accelerated future. We help leaders build sustainable, profitable businesses.
               </p>
             </div>
-            <div className="text-center">
-              <h4 className="font-semibold mb-4 text-primary-200">Company</h4>
-              <ul className="space-y-2 text-sm text-white">
-                <li>
-                  <Link
-                    to="/about"
-                    onClick={scrollToTop}
-                    className="hover:text-primary-200 transition-colors underline underline-offset-4 decoration-white hover:decoration-white"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services"
-                    onClick={scrollToTop}
-                    className="hover:text-primary-200 transition-colors underline underline-offset-4 decoration-white hover:decoration-white"
-                  >
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/careers"
-                    onClick={scrollToTop}
-                    className="hover:text-primary-200 transition-colors underline underline-offset-4 decoration-white hover:decoration-white"
-                  >
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contact"
-                    onClick={scrollToTop}
-                    className="hover:text-primary-200 transition-colors underline underline-offset-4 decoration-white hover:decoration-white"
-                  >
-                    Contact
-                  </Link>
-                </li>
+            
+            <div>
+              <h4 className="font-bold text-primary-400 mb-6">Company</h4>
+              <ul className="space-y-4">
+                {['About Us', 'Careers', 'Contact', 'Locations'].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-slate-400 hover:text-primary-400 transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
-            <div className="text-center">
-              <h4 className="font-semibold mb-4 text-primary-200">Services</h4>
-              <ul className="space-y-2 text-sm text-white">
-                <li>People / HR</li>
-                <li>Digital Tech</li>
-                <li>Operations & Strategy</li>
-                <li>Supply Chain</li>
-                <li>Marketing</li>
-                <li>Project Management</li>
-              </ul>
-            </div>
-            <div className="text-center">
-              <h4 className="font-semibold mb-4 text-primary-200">Connect</h4>
-              <ul className="space-y-2 text-sm text-white">
-                <li>
-                  <a
-                    href="https://www.linkedin.com/company/visionary-management-consultants-ltd/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-primary-200 transition-colors underline underline-offset-4 decoration-white hover:decoration-white"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
+
+            <div>
+              <h4 className="font-bold text-primary-400 mb-6">Insights</h4>
+              <ul className="space-y-4">
+                {['Articles', 'Case Studies', 'Events', 'Resources'].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-slate-400 hover:text-primary-400 transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
-          <div className="pt-8 border-t border-navy-700 text-center text-sm text-primary-200">
-            <p> 2025 Visionary Management Consultants Ltd. All rights reserved.</p>
+          
+          <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+            <p>&copy; 2025 Visionary Management Consultants Ltd. All rights reserved.</p>
+            <div className="flex gap-8">
+              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            </div>
           </div>
         </div>
       </footer>
