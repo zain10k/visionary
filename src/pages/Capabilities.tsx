@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Layers, Globe, Lightbulb, TrendingUp, Leaf } from 'lucide-react';
+import { ArrowRight, Leaf, Megaphone, RefreshCw, Globe, Search, Users, Settings, Layers } from 'lucide-react';
 import { AnimatedCard } from '@/components/AnimatedCard';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { AnimatedText } from '@/components/AnimatedText';
@@ -7,49 +7,76 @@ import { AnimatedText } from '@/components/AnimatedText';
 export function Capabilities() {
   const capabilities = [
     {
-      id: 'strategy',
-      icon: Layers,
-      title: 'Strategy',
-      subtitle: 'Define Your Path',
-      description: 'We help organizations identify their unique advantages and chart a course for sustainable growth. Our approach combines rigorous analysis with creative foresight.',
-      features: ['Corporate Strategy', 'Business Unit Strategy', 'Go-to-Market Planning', 'M&A Support'],
-      image: 'https://images.pexels.com/photos/3760069/pexels-photo-3760069.jpeg?auto=compress&cs=tinysrgb&w=800'
+      id: 'sustainability-strategy',
+      icon: Leaf,
+      title: 'Sustainability Strategy & ESG Planning',
+      subtitle: 'Resilient Future',
+      description: 'Build a responsible business that delivers long-term value. We integrate ESG principles into core strategy for lasting impact and sustainable growth.',
+      features: ['ESG Strategy Development', 'Sustainability Roadmaps', 'ESG Reporting & Compliance', 'Sustainable Operations Planning'],
+      image: 'https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
-      id: 'digital',
-      icon: Globe,
-      title: 'Digital',
-      subtitle: 'Embrace Transformation',
-      description: 'Technology is no longer just an enabler; it is the driver of value. We guide you through digital transformation to improve efficiency and customer experience.',
-      features: ['Digital Strategy', 'Technology Implementation', 'Digital Customer Experience', 'IT Modernization'],
-      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      id: 'analytics',
-      icon: Lightbulb,
-      title: 'Analytics',
-      subtitle: 'Power of Data',
-      description: 'Turn vast amounts of data into actionable insights. We help you leverage advanced analytics and AI to make informed, profitable decisions.',
-      features: ['Data Strategy', 'Predictive Analytics', 'Performance Measurement', 'AI Integration'],
-      image: 'https://images.pexels.com/photos/186461/pexels-photo-186461.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      id: 'growth',
-      icon: TrendingUp,
-      title: 'Growth',
-      subtitle: 'Unlock Potential',
-      description: 'Unlock new revenue streams and optimize existing ones. We focus on the commercial levers that drive top-line performance.',
-      features: ['Revenue Growth Management', 'Sales Effectiveness', 'Pricing Strategy', 'Innovation Pipeline'],
+      id: 'marketing-consultancy',
+      icon: Megaphone,
+      title: 'Marketing Consultancy',
+      subtitle: 'Brand Growth',
+      description: 'Drive brand growth and market presence. We help organizations develop and execute marketing strategies that engage customers and drive measurable business results.',
+      features: ['Marketing Strategy', 'Brand Positioning', 'Digital Marketing', 'Marketing Analytics'],
       image: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
-      id: 'sustainability',
-      icon: Leaf,
-      title: 'Sustainability',
-      subtitle: 'Resilient Future',
-      description: 'Build a responsible business that delivers long-term value. We integrate ESG principles into core strategy for lasting impact.',
-      features: ['ESG Strategy', 'Sustainable Operations', 'Social Impact', 'Circular Economy'],
-      image: 'https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=800'
+      id: 'change-management',
+      icon: RefreshCw,
+      title: 'Change Management & Business Transformation',
+      subtitle: 'Navigate Transformation',
+      description: 'Navigate transformation with confidence. We help organizations successfully manage change and transform their operations, culture, and capabilities for sustainable growth.',
+      features: ['Change Strategy & Planning', 'Stakeholder Engagement', 'Organizational Transformation', 'Change Readiness Assessment'],
+      image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800'
+    },
+    {
+      id: 'digital-transformation',
+      icon: Globe,
+      title: 'Digital Transformation & Technology Consulting',
+      subtitle: 'Embrace Transformation',
+      description: 'Embrace transformation with confidence. Technology is the driver of value. We guide you through digital transformation to improve efficiency, enhance customer experience, and drive innovation.',
+      features: ['Digital Strategy', 'Technology Consulting', 'Digital Platform Development', 'IT Modernization'],
+      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800'
+    },
+    {
+      id: 'market-research',
+      icon: Search,
+      title: 'Market Research & Growth Consulting',
+      subtitle: 'Unlock Growth',
+      description: 'Unlock growth opportunities. We help organizations understand markets, customers, and competitors to develop data-driven growth strategies that drive sustainable expansion.',
+      features: ['Market Analysis', 'Competitive Intelligence', 'Customer Research', 'Growth Strategy Development'],
+      image: 'https://images.pexels.com/photos/590544/pexels-photo-590544.jpeg?auto=compress&cs=tinysrgb&w=800'
+    },
+    {
+      id: 'hr-people-development',
+      icon: Users,
+      title: 'HR & People Development Consulting',
+      subtitle: 'Build Your Greatest Asset',
+      description: 'Build your greatest asset. We help organizations develop their people, build capabilities, and create cultures that drive performance and engagement.',
+      features: ['Talent Strategy', 'Organizational Development', 'Learning & Development', 'Performance Management'],
+      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800'
+    },
+    {
+      id: 'operations-process',
+      icon: Settings,
+      title: 'Operations & Process Improvement',
+      subtitle: 'Operational Excellence',
+      description: 'Optimize operations for excellence. We help organizations streamline processes, eliminate waste, and build operational capabilities that drive efficiency and customer satisfaction.',
+      features: ['Process Optimization', 'Operational Excellence', 'Supply Chain Optimization', 'Performance Management'],
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800'
+    },
+    {
+      id: 'strategy-business-planning',
+      icon: Layers,
+      title: 'Strategy & Business Planning',
+      subtitle: 'Define Your Path',
+      description: 'Define your path forward. We help organizations develop strategic plans and business plans that align with objectives, leverage opportunities, and drive sustainable growth.',
+      features: ['Strategic Planning', 'Business Planning', 'Market Strategy', 'Strategic Execution'],
+      image: 'https://images.pexels.com/photos/3760069/pexels-photo-3760069.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
   ];
 
@@ -110,10 +137,10 @@ export function Capabilities() {
                       
                       <div className="mt-8">
                         <Link 
-                          to="/contact" 
+                          to={`/services/${cap.id}`} 
                           className="inline-flex items-center gap-2 text-white font-semibold hover:text-primary-400 transition-colors border-b border-transparent hover:border-primary-400 pb-1"
                         >
-                          Discuss {cap.title} Needs
+                          Learn More About {cap.title}
                           <ArrowRight size={18} />
                         </Link>
                       </div>
@@ -150,7 +177,7 @@ export function Capabilities() {
             </h2>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-white text-primary-600 font-bold rounded-full px-8 py-4 hover:bg-slate-100 transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 bg-primary-400 text-navy-950 font-bold text-lg rounded-full px-10 py-4 hover:bg-white transition-colors shadow-lg"
             >
               Get in Touch
               <ArrowRight size={20} />

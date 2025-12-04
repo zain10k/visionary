@@ -27,11 +27,14 @@ export function Layout({ children }: LayoutProps) {
       label: 'Capabilities',
       path: '/capabilities',
       dropdown: [
-        { label: 'Strategy', path: '/capabilities' },
-        { label: 'Digital', path: '/capabilities' },
-        { label: 'Analytics', path: '/capabilities' },
-        { label: 'Growth', path: '/capabilities' },
-        { label: 'Sustainability', path: '/capabilities' },
+        { label: 'Sustainability & ESG', path: '/services/sustainability-strategy' },
+        { label: 'Marketing Consultancy', path: '/services/marketing-consultancy' },
+        { label: 'Change Management', path: '/services/change-management' },
+        { label: 'Digital Transformation', path: '/services/digital-transformation' },
+        { label: 'Market Research & Growth', path: '/services/market-research' },
+        { label: 'HR & People Development', path: '/services/hr-people-development' },
+        { label: 'Operations & Process', path: '/services/operations-process' },
+        { label: 'Strategy & Planning', path: '/services/strategy-business-planning' },
       ]
     },
     {

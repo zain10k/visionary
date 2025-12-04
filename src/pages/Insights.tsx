@@ -142,25 +142,30 @@ export function Insights() {
         </div>
       </section>
 
-      {/* Newsletter Section */}
+      {/* Consultation CTA Section */}
       <section className="py-24 bg-navy-900 border-t border-slate-800">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Stay Ahead of the Curve</h2>
-              <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
-                Join 5,000+ leaders who receive our monthly strategic insights delivered directly to their inbox.
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Transform Your Business?</h2>
+              <p className="text-slate-300 mb-8 max-w-2xl mx-auto text-lg">
+                Let's discuss how our strategic insights and consulting services can help your organization achieve its goals. Schedule a consultation to explore how we can support your growth journey.
               </p>
-              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email address" 
-                  className="flex-1 bg-navy-950 border border-slate-700 text-white px-6 py-4 rounded-full focus:outline-none focus:border-primary-400"
-                />
-                <button type="button" className="bg-primary-400 text-navy-950 font-bold px-8 py-4 rounded-full hover:bg-white transition-colors">
-                  Subscribe
-                </button>
-              </form>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-primary-400 text-navy-950 font-bold px-8 py-4 rounded-full hover:bg-white transition-colors shadow-lg"
+                >
+                  Schedule a Consultation
+                  <ArrowRight size={20} />
+                </Link>
+                <Link
+                  to="/capabilities"
+                  className="inline-flex items-center justify-center gap-2 bg-transparent text-primary-400 font-bold px-8 py-4 rounded-full border-2 border-primary-400 hover:bg-primary-400/10 transition-all"
+                >
+                  Explore Our Services
+                </Link>
+              </div>
             </AnimatedSection>
           </div>
         </div>
