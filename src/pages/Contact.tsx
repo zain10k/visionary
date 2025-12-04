@@ -65,8 +65,8 @@ export function Contact() {
     {
       icon: MapPin,
       title: 'Visit Us',
-      content: 'Unit 9, 4 Creek Road, Barking, England, IG11 0JH',
-      link: 'https://maps.google.com/?q=Unit+9,+4+Creek+Road,+Barking,+England,+IG11+0JH',
+      content: '113 River Road, Barking, England, IG11 0EG',
+      link: 'https://maps.google.com/?q=113+River+Road,+Barking,+England,+IG11+0EG',
     },
   ];
 
@@ -124,7 +124,7 @@ export function Contact() {
               <div className="relative z-10 mt-12">
                  <div className="p-6 bg-navy-950/50 rounded-xl border border-white/5 backdrop-blur-sm">
                    <h4 className="text-white font-bold mb-2">Business Hours</h4>
-                   <p className="text-slate-400 text-sm">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                   <p className="text-slate-400 text-sm">Monday - Friday: 9:00 AM - 5:00 PM</p>
                  </div>
               </div>
             </div>

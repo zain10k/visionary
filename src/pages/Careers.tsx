@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Briefcase, MapPin, Users, TrendingUp, Lightbulb, BarChart3, Target, Mail, ArrowRight, Check } from 'lucide-react';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { AnimatedText } from '@/components/AnimatedText';
 import { AnimatedCard } from '@/components/AnimatedCard';
+import { JobApplicationForm } from '@/components/JobApplicationForm';
 
 export function Careers() {
+  const [isApplicationOpen, setIsApplicationOpen] = useState(false);
   const benefits = [
     {
       icon: Briefcase,
@@ -96,16 +99,16 @@ export function Careers() {
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-2">Advertising & Marketing Associate</h3>
                     <div className="flex items-center gap-4 text-slate-400 text-sm font-medium">
-                      <span className="flex items-center gap-1"><MapPin size={16} className="text-primary-200" /> London, UK</span>
-                      <span className="flex items-center gap-1"><Briefcase size={16} className="text-primary-200" /> Full-time</span>
+                      <span className="flex items-center gap-1"><MapPin size={16} className="text-primary-400" /> London, UK</span>
+                      <span className="flex items-center gap-1"><Briefcase size={16} className="text-primary-400" /> Full-time</span>
                     </div>
                   </div>
-                  <Link 
-                    to="/contact" 
-                    className="inline-flex items-center justify-center gap-2 bg-primary-200 text-navy-950 font-bold rounded-lg px-6 py-3 hover:bg-white transition-colors"
+                  <button
+                    onClick={() => setIsApplicationOpen(true)}
+                    className="inline-flex items-center justify-center gap-2 bg-primary-400 text-navy-950 font-bold rounded-lg px-6 py-3 hover:bg-white transition-colors"
                   >
                     Apply Now
-                  </Link>
+                  </button>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-12">
@@ -127,7 +130,7 @@ export function Careers() {
                         'Analyze performance & report to clients'
                       ].map((item) => (
                         <li key={item} className="flex items-start gap-3 text-slate-300 text-sm">
-                          <Check size={16} className="text-primary-200 mt-0.5 flex-shrink-0" />
+                          <Check size={16} className="text-primary-400 mt-0.5 flex-shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -145,14 +148,14 @@ export function Careers() {
                         'Proactive & organized mindset'
                       ].map((item) => (
                         <li key={item} className="flex items-start gap-3 text-slate-300 text-sm">
-                          <Check size={16} className="text-primary-200 mt-0.5 flex-shrink-0" />
+                          <Check size={16} className="text-primary-400 mt-0.5 flex-shrink-0" />
                           {item}
                         </li>
                       ))}
                     </ul>
 
-                    <div className="bg-primary-200/10 p-6 rounded-xl border border-primary-200/20">
-                      <h4 className="font-bold text-primary-200 mb-2">Why This Role?</h4>
+                    <div className="bg-primary-400/10 p-6 rounded-xl border border-primary-400/20">
+                      <h4 className="font-bold text-primary-400 mb-2">Why This Role?</h4>
                       <p className="text-primary-100 text-sm mb-4">
                         Ideally positioned for someone who wants to blend strategy with execution and see the direct impact of their work on client success.
                       </p>
@@ -164,6 +167,13 @@ export function Careers() {
           </div>
         </div>
       </section>
+
+      {/* Job Application Form Modal */}
+      <JobApplicationForm
+        isOpen={isApplicationOpen}
+        onClose={() => setIsApplicationOpen(false)}
+        position="Advertising & Marketing Associate"
+      />
     </div>
   );
 }
