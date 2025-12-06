@@ -8,6 +8,13 @@ import { JobApplicationForm } from '@/components/JobApplicationForm';
 
 export function Careers() {
   const [isApplicationOpen, setIsApplicationOpen] = useState(false);
+  const [selectedPosition, setSelectedPosition] = useState('Advertising & Marketing Associate');
+
+  const handleApply = (position: string) => {
+    setSelectedPosition(position);
+    setIsApplicationOpen(true);
+  };
+
   const benefits = [
     {
       icon: Briefcase,
@@ -104,7 +111,7 @@ export function Careers() {
                     </div>
                   </div>
                   <button
-                    onClick={() => setIsApplicationOpen(true)}
+                    onClick={() => handleApply('Advertising & Marketing Associate')}
                     className="inline-flex items-center justify-center gap-2 bg-primary-400 text-navy-950 font-bold rounded-lg px-6 py-3 hover:bg-white transition-colors"
                   >
                     Apply Now
@@ -164,6 +171,83 @@ export function Careers() {
                 </div>
               </div>
             </AnimatedSection>
+
+            <AnimatedSection className="mt-8">
+              <div className="bg-navy-900/50 backdrop-blur-md border border-slate-700 rounded-2xl p-8 hover:border-primary-500/50 transition-colors duration-300">
+                <div className="flex flex-col md:flex-row justify-between md:items-center gap-6 mb-8 border-b border-slate-700 pb-8">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Application Developer Intern (Associate Level)</h3>
+                    <div className="flex items-center gap-4 text-slate-400 text-sm font-medium">
+                      <span className="flex items-center gap-1"><MapPin size={16} className="text-primary-400" /> Remote / Hybrid</span>
+                      <span className="flex items-center gap-1"><Briefcase size={16} className="text-primary-400" /> Internship</span>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => handleApply('Application Developer Intern')}
+                    className="inline-flex items-center justify-center gap-2 bg-primary-400 text-navy-950 font-bold rounded-lg px-6 py-3 hover:bg-white transition-colors"
+                  >
+                    Apply Now
+                  </button>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div>
+                    <h4 className="font-bold text-lg mb-4 flex items-center gap-2 text-white">
+                      <Target className="text-primary-400" size={20} /> Role Overview
+                    </h4>
+                    <p className="text-slate-300 leading-relaxed mb-6">
+                      We are looking for a motivated and detail-oriented Associate Application Developer Intern to join our development team. This role is ideal for students or early-career developers who want hands-on experience working on real projects for both internal company systems and external client applications.
+                    </p>
+                    
+                    <h4 className="font-bold text-lg mb-4 text-white">Key Responsibilities</h4>
+                    <ul className="space-y-3 mb-6">
+                      {[
+                        'Support development of internal applications & tools',
+                        'Assist in building new product features',
+                        'Participate in developing client applications',
+                        'Help gather requirements & implement features',
+                        'Write clean, modular, and maintainable code',
+                        'Collaborate with developers & project managers'
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-3 text-slate-300 text-sm">
+                          <Check size={16} className="text-primary-400 mt-0.5 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-bold text-lg mb-4 text-white">Required Skills</h4>
+                    <ul className="space-y-3 mb-6">
+                       {[
+                        'Basic programming knowledge (JS, Python, or Java)',
+                        'Web development (HTML, CSS, APIs)',
+                        'Problem-solving mindset & eagerness to learn',
+                        'Good communication & documentation skills',
+                        'Ability to work in a collaborative team'
+                      ].map((item) => (
+                        <li key={item} className="flex items-start gap-3 text-slate-300 text-sm">
+                          <Check size={16} className="text-primary-400 mt-0.5 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="bg-primary-400/10 p-6 rounded-xl border border-primary-400/20">
+                      <h4 className="font-bold text-primary-400 mb-2">Benefits</h4>
+                      <p className="text-slate-300 text-sm mb-2">
+                        • Hands-on experience with real-world projects<br/>
+                        • Mentorship from experienced developers<br/>
+                        • Flexible work schedule (student-friendly)<br/>
+                        • Opportunity to build a strong portfolio<br/>
+                        • Potential full-time opportunity
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -172,7 +256,7 @@ export function Careers() {
       <JobApplicationForm
         isOpen={isApplicationOpen}
         onClose={() => setIsApplicationOpen(false)}
-        position="Advertising & Marketing Associate"
+        position={selectedPosition}
       />
     </div>
   );
