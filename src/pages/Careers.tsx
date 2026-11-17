@@ -106,7 +106,7 @@ export function Careers() {
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-2">Advertising & Marketing Associate</h3>
                     <div className="flex items-center gap-4 text-slate-400 text-sm font-medium">
-                      <span className="flex items-center gap-1"><MapPin size={16} className="text-primary-400" /> London, UK</span>
+                      <span className="flex items-center gap-1"><MapPin size={16} className="text-primary-400" /> 12 Swale Close, Aveley, South Ockendon, England, RM15 4LX</span>
                       <span className="flex items-center gap-1"><Briefcase size={16} className="text-primary-400" /> Full-time</span>
                     </div>
                   </div>

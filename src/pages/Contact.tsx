@@ -65,8 +65,8 @@ export function Contact() {
     {
       icon: MapPin,
       title: 'Visit Us',
-      content: '113 River Road, Barking, England, IG11 0EG',
-      link: 'https://maps.google.com/?q=113+River+Road,+Barking,+England,+IG11+0EG',
+      content: '12 Swale Close, Aveley, South Ockendon, England, RM15 4LX',
+      link: 'https://maps.google.com/?q=12+Swale+Close,+Aveley,+South+Ockendon,+England,+RM15+4LX',
     },
   ];
 
